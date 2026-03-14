@@ -7,15 +7,12 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Cinzel', serif;
-  user-select: none;
   cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
+  user-select: none;
 }
 
 /* ======================= BODY ======================= */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background: #0f0f0f;
   color: white;
   overflow-x: hidden;
@@ -75,14 +72,6 @@ nav a:hover {
   color: #c7a66b;
 }
 
-.menu-toggle {
-  display: none;
-  position: absolute;
-  right: 20px;
-  font-size: 24px;
-  z-index: 1002;
-}
-
 /* ======================= BANNER ======================= */
 .banner {
   height: 100vh;
@@ -118,10 +107,31 @@ nav a:hover {
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
+/* CONTEÚDO CENTRAL DO BANNER */
 .conteudo-banner {
   z-index: 10;
 }
 
+/* TÍTULO PRINCIPAL */
+.logo-banner {
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 10px #c7a66b;
+  margin-bottom: 20px;
+}
+
+/* LOGO DO ESTÚDIO - AUMENTADA E TRANSPARENTE */
+.logo-estudio {
+  display: block;
+  margin: -10px auto 20px auto; /* sobe um pouco a logo */
+  max-width: 180px;
+  height: auto;
+  opacity: 0.85; /* transparente */
+  z-index: 10;
+  position: relative;
+}
+
+/* SUBTÍTULO */
 .neon {
   font-size: 64px;
   letter-spacing: 6px;
@@ -198,6 +208,12 @@ nav a:hover {
   filter: brightness(0.9);
 }
 
+.grid img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
@@ -233,14 +249,17 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* ======================= FOOTER ======================= */
+/* FOOTER FIXO E TRANSPARENTE */
 footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  background: rgba(50, 50, 50, 0.1);
+  background: rgba(50,50,50,0.1); /* cinza transparente */
   color: #ccc;
   z-index: 1000;
 }
@@ -252,10 +271,6 @@ footer {
   }
 
   nav {
-    display: none;
-  }
-
-  .menu-toggle {
     display: none;
   }
 
@@ -276,12 +291,22 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .logo {
+  .logo-banner {
     font-size: 24px;
   }
+/* LOGO DO ESTÚDIO */
+.logo-estudio {
+  display: block;                  /* mantém a logo como bloco, centralizada horizontalmente */
+  margin: 0 auto 20px auto;        /* margem: cima | direita | baixo | esquerda */
+                                   /* 0 = espaço acima da logo
+                                      auto = centraliza horizontalmente
+                                      20px = espaço abaixo da logo */
+  max-width: 150px;                /* tamanho máximo da logo */
+  height: auto;                     /* mantém proporção */
+  position: relative;               /* permite ajustar posição */
+  top: -150px;                       /* sobe a logo: valores negativos = sobe, positivos = desce */
+  left: 0;                          /* deslocamento horizontal: valores positivos = direita, negativos = esquerda */
+  opacity: 0.9;                     /* transparência da logo, 1 = totalmente visível, 0 = invisível */
 }
 
-/* CURSOR */
-* {
-  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
 }
