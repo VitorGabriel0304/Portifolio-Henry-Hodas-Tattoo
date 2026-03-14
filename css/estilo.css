@@ -1,494 +1,296 @@
+/* ======================= FONTE E RESET ======================= */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-font-family:'Cinzel', serif;
-cursor:url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+  font-family:'Cinzel', serif;
+  cursor:url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
 }
 
+/* ======================= BODY ======================= */
 body{
-background:#0f0f0f;
-color:white;
-overflow-x:hidden;
+  background:#0f0f0f;
+  color:white;
+  overflow-x:hidden;
 }
 
-
-
-/* PARTICULAS */
-
+/* ======================= PARTICULAS ======================= */
 #particulas{
-
-position:fixed;
-width:100%;
-height:100%;
-
-background:url("https://www.transparenttextures.com/patterns/stardust.png");
-
-opacity:0.2;
-
-z-index:-1;
-
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity:0.2;
+  z-index:-1;
 }
 
-
-
-/* HEADER */
-
+/* ======================= HEADER ======================= */
 header{
-
-position:fixed;
-top:0;
-width:100%;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:20px;
-
-background:rgba(0,0,0,0.4);
-
-backdrop-filter:blur(10px);
-
-z-index:1000;
-
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
 .logo{
-
-font-size:32px;
-
-letter-spacing:6px;
-
-position:absolute;
-
-left:50%;
-
-transform:translateX(-50%);
-
-text-shadow:0 0 10px #c7a66b;
-
+  font-size:32px;
+  letter-spacing:6px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  text-shadow:0 0 10px #c7a66b;
 }
 
 nav{
-
-position:absolute;
-
-right:10%;
-
+  position:absolute;
+  right:10%;
 }
 
 nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin-left:25px;
-
-transition:0.3s;
-
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  transition:0.3s;
 }
 
 nav a:hover{
-
-color:#c7a66b;
-
+  color:#c7a66b;
 }
 
-
-
-/* MENU MOBILE */
-
+/* ======================= MENU MOBILE ======================= */
 .menu-toggle{
-
-display:none;
-
-position:absolute;
-
-right:20px;
-
-font-size:24px;
-
-cursor:pointer;
-
+  display:none;
+  position:absolute;
+  right:20px;
+  font-size:24px;
+  cursor:pointer;
 }
 
-
-
-/* BANNER */
-
+/* ======================= BANNER ======================= */
 .banner{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-position:relative;
-
-overflow:hidden;
-
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
 .banner::before{
-
-content:"";
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-background:radial-gradient(circle, transparent 40%, #0f0f0f 100%);
-
-z-index:1;
-
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle, transparent 40%, #0f0f0f 100%);
+  z-index:1;
 }
 
-
-
-/* FOTOS */
-
+/* ======================= FOTOS ======================= */
 .foto-esquerda,
 .foto-direita{
-
-position:absolute;
-
-top:0;
-
-width:35%;
-
-height:100%;
-
-object-fit:cover;
-
-opacity:0.9;
-
-filter:brightness(0.7);
-
+  position:absolute;
+  top:0;
+  width:35%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.9;
+  filter:brightness(0.7);
 }
 
 .foto-esquerda{ left:0; }
 .foto-direita{ right:0; }
 
-
-
 .conteudo-banner{
-
-z-index:10;
-
+  z-index:10;
 }
-
-
 
 .neon{
-
-font-size:64px;
-
-letter-spacing:6px;
-
-color:#fff;
-
-text-shadow:
-0 0 5px #c7a66b,
-0 0 15px #c7a66b,
-0 0 30px #c7a66b;
-
-margin-bottom:20px;
-
+  font-size:64px;
+  letter-spacing:6px;
+  color:#fff;
+  text-shadow:
+    0 0 5px #c7a66b,
+    0 0 15px #c7a66b,
+    0 0 30px #c7a66b;
+  margin-bottom:20px;
 }
-
-
 
 .conteudo-banner p{
-
-color:#ccc;
-
-margin-bottom:30px;
-
+  color:#ccc;
+  margin-bottom:30px;
 }
 
-
-
-/* BOTÕES */
-
+/* ======================= BOTOES ======================= */
 .botoes{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .btn{
-
-padding:14px 30px;
-
-border:1px solid #c7a66b;
-
-color:white;
-
-text-decoration:none;
-
-transition:0.3s;
-
+  padding:14px 30px;
+  border:1px solid #c7a66b;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
 }
 
 .btn:hover{
-
-background:#c7a66b;
-
-color:black;
-
+  background:#c7a66b;
+  color:black;
 }
 
 .insta{
-
-border-color:#e1306c;
-
+  border-color:#e1306c;
 }
 
 .insta:hover{
-
-background:#e1306c;
-
+  background:#e1306c;
 }
 
-
-
-/* SOBRE */
-
+/* ======================= SOBRE ======================= */
 .sobre{
-
-padding:120px 10%;
-
-text-align:center;
-
+  padding:120px 10%;
+  text-align:center;
 }
 
 .sobre h2{
-
-font-size:40px;
-
-margin-bottom:20px;
-
+  font-size:40px;
+  margin-bottom:20px;
 }
 
-
-
-/* GALERIA */
-
+/* ======================= GALERIA ======================= */
 .galeria{
-
-padding:120px 10%;
-
-text-align:center;
-
+  padding:120px 10%;
+  text-align:center;
 }
 
 .grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-gap:25px;
-
-margin-top:40px;
-
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:40px;
 }
 
 .grid img{
-
-width:100%;
-
-border-radius:10px;
-
-cursor:pointer;
-
-transition:0.4s;
-
-filter:brightness(0.9);
-
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.4s;
+  filter:brightness(0.9);
 }
 
 .grid img:hover{
-
-transform:scale(1.07);
-
-filter:brightness(1.1);
-
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
-
+  transform:scale(1.07);
+  filter:brightness(1.1);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-
-
-/* WHATSAPP */
-
+/* ======================= WHATSAPP ======================= */
 .whatsapp{
-
-position:fixed;
-
-bottom:30px;
-
-right:30px;
-
-width:65px;
-
-height:65px;
-
-background:#25d366;
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:30px;
-
-color:white;
-
-animation:whatsappPulse 2s infinite;
-
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:65px;
+  height:65px;
+  background:#25d366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  color:white;
+  animation:whatsappPulse 2s infinite;
 }
 
 @keyframes whatsappPulse{
-
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-
-70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-
-
-/* ANIMAÇÃO */
-
+/* ======================= ANIMACAO ======================= */
 .animar{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:0.6s;
-
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
 }
 
 .animar.mostrar{
-
-opacity:1;
-
-transform:translateY(0);
-
+  opacity:1;
+  transform:translateY(0);
 }
 
-
-
-/* FOOTER */
-
+/* ======================= FOOTER ======================= */
 footer{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:40px;
-
-background:black;
-
-color:#777;
-
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  background:black;
+  color:#777;
 }
 
-
-
-/* MOBILE */
-
+/* ======================= MOBILE ======================= */
 @media(max-width:900px){
 
-nav{
+  nav{
+    display:none;
+    flex-direction:column;
+    background:black;
+    position:absolute;
+    top:70px;
+    right:0;
+    width:200px;
+  }
 
-display:none;
+  nav.active{
+    display:flex;
+  }
 
-flex-direction:column;
+  .menu-toggle{
+    display:block;
+  }
 
-background:black;
+  .foto-esquerda,
+  .foto-direita{
+    display:none;
+  }
 
-position:absolute;
+  .banner{
+    background:url("../img/tatuagens/henry tatuando.PNG") center/cover;
+  }
 
-top:70px;
+  .neon{
+    font-size:36px;
+  }
 
-right:0;
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-width:200px;
-
-}
-
-nav.active{
-
-display:flex;
-
-}
-
-.menu-toggle{
-
-display:block;
-
-}
-
-.foto-esquerda,
-.foto-direita{
-
-display:none;
-
-}
-
-.banner{
-
-background:url("../img/tatuagens/henry tatuando.PNG") center/cover;
-
-}
-
-.neon{
-
-font-size:36px;
+  .logo{
+    font-size:24px;       /* Corrige o logo cortado */
+    left:50%;
+    transform:translateX(-50%);
+    white-space: nowrap;
+  }
 
 }
 
-.grid{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-
-/* Evita que o cursor vire "texto" */
+/* ======================= CURSOR E SELECAO ======================= */
 * {
   user-select: none; /* impede seleção de texto */
 }
@@ -497,8 +299,7 @@ a, button {
   cursor: pointer; /* garante que links e botões tenham cursor correto */
 }
 
-/* Ou de forma mais direta para o header/início */
-#inicio {      /* se o seu "início" tiver id="inicio" */
+#inicio { /* se o seu "início" tiver id="inicio" */
   cursor: pointer;
   user-select: none;
 }
