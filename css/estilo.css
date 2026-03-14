@@ -92,7 +92,7 @@ nav a:hover {
   z-index: 1;
 }
 
-/* FOTOS */
+/* FOTOS LATERAIS */
 .foto-esquerda,
 .foto-direita {
   position: absolute;
@@ -103,13 +103,14 @@ nav a:hover {
   opacity: 0.9;
   filter: brightness(0.7);
 }
-
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
 /* CONTEÚDO CENTRAL DO BANNER */
 .conteudo-banner {
   z-index: 10;
+  position: relative;
+  padding-top: 50px; /* Espaço acima no desktop */
 }
 
 /* TÍTULO PRINCIPAL */
@@ -118,17 +119,19 @@ nav a:hover {
   color: white;
   text-shadow: 0 0 10px #c7a66b;
   margin-bottom: 20px;
+  z-index: 11;
 }
 
-/* LOGO DO ESTÚDIO - AUMENTADA E TRANSPARENTE */
+/* LOGO DO ESTÚDIO - FLORESCENTE E TRANSPARENTE */
 .logo-estudio {
   display: block;
-  margin: -10px auto 20px auto; /* sobe um pouco a logo */
+  margin: 0 auto 20px auto;
   max-width: 180px;
   height: auto;
-  opacity: 0.85; /* transparente */
-  z-index: 10;
   position: relative;
+  top: -80px; /* sobe a logo */
+  opacity: 0.85;
+  z-index: 12;
 }
 
 /* SUBTÍTULO */
@@ -283,39 +286,24 @@ footer {
     background: url("../img/tatuagens/henry tatuando.PNG") center/cover;
   }
 
-  /* Título principal e logo central */
+  /* Ajustes do título e logo */
   .logo-banner {
-    font-size: 20px;         /* menor tamanho para caber */
-    margin-bottom: 15px;     /* menos espaço */
-    word-break: break-word;  /* força quebra se necessário */
+    font-size: 20px;
+    margin-bottom: 10px;
+    word-break: break-word;
   }
 
-  /* Logo do estúdio flutuante */
   .logo-estudio {
-    max-width: 100px;        /* reduz para caber na tela */
-    margin-bottom: 15px;     
+    max-width: 100px;
+    margin-bottom: 10px;
+    top: -60px; /* sobe a logo no mobile */
   }
 
   .neon {
-    font-size: 28px;         /* subtítulo menor */
+    font-size: 28px;
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 }
-/* LOGO DO ESTÚDIO */
-.logo-estudio {
-  display: block;                  /* mantém a logo como bloco, centralizada horizontalmente */
-  margin: 0 auto 20px auto;        /* margem: cima | direita | baixo | esquerda */
-                                   /* 0 = espaço acima da logo
-                                      auto = centraliza horizontalmente
-                                      20px = espaço abaixo da logo */
-  max-width: 150px;                /* tamanho máximo da logo */
-  height: auto;                     /* mantém proporção */
-  position: relative;               /* permite ajustar posição */
-  top: -150px;                       /* sobe a logo: valores negativos = sobe, positivos = desce */
-  left: 0;                          /* deslocamento horizontal: valores positivos = direita, negativos = esquerda */
-  opacity: 0.9;                     /* transparência da logo, 1 = totalmente visível, 0 = invisível */
-}
-
