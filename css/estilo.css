@@ -265,9 +265,10 @@ footer {
 }
 
 /* MOBILE */
+/* MOBILE */
 @media(max-width:900px) {
   header {
-    padding: 20px;
+    padding: 25px 20px; /* aumenta espaço superior e inferior */
   }
 
   nav {
@@ -291,12 +292,24 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  /* Ajuste da logo do header */
+  .logo {
+    font-size: 22px;           /* reduz tamanho da fonte */
+    letter-spacing: 3px;       /* diminui espaçamento entre letras */
+    top: 10px;                 /* desce um pouco para não cortar */
+    white-space: normal;       /* permite quebrar linha se necessário */
+    text-align: center;        /* centraliza multi-linha */
+  }
+
   .logo-banner {
-    font-size: 24px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    word-break: break-word;
   }
 
   .logo-estudio {
     max-width: 140px;
     margin: -5px auto 15px auto;
+    top: -60px; /* mantém flutuando acima do banner */
   }
 }
