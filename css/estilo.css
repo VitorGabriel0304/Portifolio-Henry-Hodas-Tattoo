@@ -24,38 +24,36 @@ body {
   width: 100%;
   height: 100%;
   background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.2; /* partículas discretas */
+  opacity: 0.2;
   z-index: -1;
 }
 
 /* ======================= HEADER ======================= */
 header {
-  position: fixed;               /* fixa no topo */
+  position: fixed;
   top: 0;
   width: 100%;
-  display: flex;                 /* flex para centralizar */
-  justify-content: center;       /* centraliza horizontal */
-  align-items: center;           /* centraliza vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px 40px;
-  background: rgba(0,0,0,0.0);  /* fundo transparente */
-  backdrop-filter: blur(10px);   /* blur opcional */
+  background: rgba(0,0,0,0.0);
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
-/* ======================= LOGO PRINCIPAL ======================= */
 .logo {
-  font-size: 32px;               /* tamanho da fonte */
-  letter-spacing: 6px;           /* espaçamento entre letras */
-  color: white;                  /* cor do texto */
-  text-shadow: 0 0 10px #e29209; /* efeito neon */
-  text-align: center;            /* centraliza o texto */
-  white-space: nowrap;           /* mantém em uma linha só */
-  position: relative;            /* remove absolute */
+  font-size: 32px;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 0 0 10px #e29209;
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
   z-index: 1001;
-  line-height: 1.2;              /* altura da linha */
+  line-height: 1.2;
 }
 
-/* ======================= NAVIGATION ======================= */
 nav {
   position: absolute;
   right: 40px;
@@ -94,7 +92,6 @@ nav a:hover {
   z-index: 1;
 }
 
-/* FOTOS */
 .foto-esquerda,
 .foto-direita {
   position: absolute;
@@ -109,12 +106,10 @@ nav a:hover {
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
-/* CONTEÚDO CENTRAL DO BANNER */
 .conteudo-banner {
   z-index: 10;
 }
 
-/* TÍTULO PRINCIPAL */
 .logo-banner {
   font-size: 32px;
   color: white;
@@ -122,18 +117,16 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-/* LOGO DO ESTÚDIO - TRANSPARENTE */
 .logo-estudio {
   display: block;
   margin: -10px auto 20px auto;
   max-width: 180px;
   height: auto;
-  opacity: 0.85; /* transparente */
+  opacity: 0.85;
   z-index: 10;
   position: relative;
 }
 
-/* SUBTÍTULO */
 .neon {
   font-size: 64px;
   letter-spacing: 6px;
@@ -150,7 +143,6 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-/* BOTOES */
 .botoes {
   display: flex;
   justify-content: center;
@@ -212,43 +204,23 @@ nav a:hover {
   z-index: 0;
 }
 
-/* Hover + toque: zoom, brilho e borda neon dourada */
 .grid img:hover,
 .grid img:active {
-  transform: scale(1.07);           /* zoom */
-  filter: brightness(1.15);          /* brilho */
+  transform: scale(1.07);
+  filter: brightness(1.15);
   box-shadow:
     0 0 10px #c7a66b,
     0 0 20px #c7a66b,
     0 0 30px #c7a66b,
     0 0 40px #c7a66b;
-  border: 2px solid #c7a66b;        /* contorno dourado */
+  border: 2px solid #c7a66b;
   animation: neonPulse 1.5s infinite alternate;
 }
 
-/* Animação do brilho neon */
 @keyframes neonPulse {
-  0% {
-    box-shadow:
-      0 0 10px #c7a66b,
-      0 0 20px #c7a66b,
-      0 0 30px #c7a66b,
-      0 0 40px #c7a66b;
-  }
-  50% {
-    box-shadow:
-      0 0 20px #fff6d1,
-      0 0 40px #fff6d1,
-      0 0 60px #fff6d1,
-      0 0 80px #fff6d1;
-  }
-  100% {
-    box-shadow:
-      0 0 10px #c7a66b,
-      0 0 20px #c7a66b,
-      0 0 30px #c7a66b,
-      0 0 40px #c7a66b;
-  }
+  0% { box-shadow:0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b; }
+  50% { box-shadow:0 0 20px #fff6d1,0 0 40px #fff6d1,0 0 60px #fff6d1,0 0 80px #fff6d1; }
+  100% { box-shadow:0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b; }
 }
 
 /* WHATSAPP */
@@ -286,7 +258,7 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* FOOTER FIXO E TRANSPARENTE */
+/* FOOTER */
 footer {
   position: relative;
   bottom: 0;
@@ -299,115 +271,18 @@ footer {
   background: rgba(50,50,50,0.1);
   color: #ccc;
   z-index: 1000;
-    margin-top: 100px; /* aumenta distância do conteúdo acima */
-
+  margin-top: 100px;
 }
 
-/* ======================= MOBILE ======================= */
-@media(max-width:900px) {
-  header {
-    position: relative;
-    padding: 40px 20px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .logo {
-    font-size: 22px;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .foto-esquerda,
-  .foto-direita {
-    display: none;
-  }
-
-  .banner {
-    background: url("../img/tatuagens/henry tatuando.PNG") center/cover;
-  }
-
-  .neon {
-    font-size: 36px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .logo-banner {
-    font-size: 20px;
-    margin-bottom: 10px;
-    word-break: break-word;
-  }
-
-  .logo-estudio {
-    max-width: 140px;
-    margin: -5px auto 15px auto;
-    top: -60px;
-  }
-}
-
-
-/* ======================= SOBRE O ESTUDIO ======================= */
-#estudio {
-  padding: 120px 10%;
-  text-align: center;
-}
-
-#estudio h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-#estudio p {
-  color: #ccc;
-  margin-bottom: 40px;
-}
-
-/* Grid de fotos do estúdio */
-.grid-estudio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.grid-estudio img {
-  width: 100%;
-  border-radius: 10px;
-  transition: 0.4s, box-shadow 0.4s, filter 0.4s;
-  filter: brightness(0.9);
-  position: relative;
-  z-index: 0;
-}
-
-/* Hover estilo neon dourado */
-.grid-estudio img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.15);
-  box-shadow:
-    0 0 10px #c7a66b,
-    0 0 20px #c7a66b,
-    0 0 30px #c7a66b,
-    0 0 40px #c7a66b;
-  border: 2px solid #f8a412;
-  animation: neonPulse 1.5s infinite alternate;
-}
-
-/* ======================= CARROSSEL GALERIA ======================= */
+/* CARROSSEL */
 .carousel-container {
   overflow: hidden;
   position: relative;
   width: 100%;
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel {
@@ -418,232 +293,117 @@ footer {
 }
 
 .carousel img {
-  width: 250px;
+  width: 300px;
+  height: auto;
   border-radius: 10px;
-  transition: transform 0.5s, opacity 0.5s, box-shadow 0.5s;
   cursor: pointer;
   flex-shrink: 0;
   opacity: 0.5;
-}
-
-.carousel img.active {
-  transform: scale(1.2);
-  opacity: 1;
-  box-shadow:
-    0 0 10px #c7a66b,
-    0 0 20px #c7a66b,
-    0 0 30px #c7a66b;
-  border: 2px solid #c7a66b;
-}
-
-/* Mobile */
-@media(max-width:900px){
-  .carousel img {
-    width: 180px;
-  }
-}
-
-/* ======================= CARROSSEL GALERIA ======================= */
-/* ======================= CARROSSEL GALERIA ======================= */
-
-/* Container geral do carrossel */
-.carousel-container {
-  position: relative;          /* necessário para posicionar setas */
-  width: 100%;
-  overflow: hidden;            /* esconde o que sai da tela */
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Linha de imagens que se move */
-.carousel {
-  display: flex;
-  gap: 150px;                  /* aumenta o espaço entre as imagens */
-  transition: transform 0.5s ease; /* animação suave ao mudar de imagem */
-  user-select: none;           /* impede seleção do mouse */
-}
-
-/* Imagens do carrossel */
-.carousel img {
-  width: 300px;                /* largura da imagem */
-  height: auto;                /* mantém proporção */
-  border-radius: 10px;         /* cantos arredondados */
-  cursor: pointer;
-  flex-shrink: 0;              /* evita que encolham */
-  opacity: 0.5;                /* imagens laterais mais apagadas */
-  filter: brightness(0.7);     /* escurece as laterais */
+  filter: brightness(0.7);
   transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
 }
 
-/* Imagem central destacada */
 .carousel img.active {
-  transform: scale(1.4);       /* aumenta a imagem do meio */
-  opacity: 1;                  /* totalmente visível */
-  filter: brightness(1.2);     /* mais clara */
+  transform: scale(1.4);
+  opacity: 1;
+  filter: brightness(1.2);
   box-shadow:
     0 0 10px #c7a66b,
     0 0 20px #c7a66b,
     0 0 30px #c7a66b,
-    0 0 40px #c7a66b;          /* efeito neon dourado */
+    0 0 40px #c7a66b;
   border: 1px solid #c7a66b;
-  z-index: 10;                 /* sempre acima das laterais */
+  z-index: 10;
 }
 
-/* ======================= SETAS ======================= */
-
-/* Botão geral das setas */
 .carousel-btn {
   position: absolute;
-  top: 50%;                    /* centralizado verticalmente */
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   border: none;
   color: white;
-  font-size: 40px;             /* seta maior e nítida */
+  font-size: 40px;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 100;                /* acima das imagens */
+  z-index: 100;
   transition: background 0.3s, transform 0.3s;
 }
 
-/* Efeito hover nas setas */
 .carousel-btn:hover {
   background: rgba(0,0,0,0.8);
-  transform: translateY(-50%) scale(1.1); /* aumenta levemente ao passar mouse */
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* Setas esquerda e direita */
-.carousel-btn.prev {
-  left: 20px;                  /* distância do canto esquerdo */
-}
-
-.carousel-btn.next {
-  right: 20px;                 /* distância do canto direito */
-}
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
 
 /* ======================= MOBILE ======================= */
-/* ======================= MOBILE CENTRALIZAÇÃO GERAL ======================= */
 @media(max-width:900px){
 
-  /* Garante que todas as sections e main fiquem centralizados */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   body, main, section {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* centraliza horizontalmente */
-    justify-content: center;  /* centraliza verticalmente dentro do section, se necessário */
-    text-align: center;       /* centraliza texto */
-    width: 100%;              /* ocupa toda a largura da tela */
-    padding-left: 10px;       /* evita que fique colado na borda */
-    padding-right: 10px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
     box-sizing: border-box;
   }
 
-  /* Banner */
+  header {
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav { display: none; }
+
+  .logo { font-size: 22px; margin-bottom: 10px; letter-spacing: 2px; text-align: center; }
+
+  .foto-esquerda, .foto-direita { display: none; }
+
   .banner {
-    flex-direction: column;   /* imagens desaparecem, mas conteúdo central continua centralizado */
-    text-align: center;
+    background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  /* Ajusta a logo e títulos */
-  .logo, .neon, .logo-banner {
-    margin: 10px 0;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
 
-/* ======================= GALERIA ======================= */
+  .neon { font-size: 36px; margin: 10px 0; }
+  .logo-banner { font-size: 20px; margin: 10px 0; word-break: break-word; }
+  .logo-estudio { max-width: 140px; margin: 0 auto 15px auto; top: 0; }
+
+  .sobre { padding: 60px 10%; text-align: center; }
+  .sobre h2 { font-size: 28px; margin-bottom: 20px; }
+
   .galeria {
-    padding: 40px 10%;       /* menos padding para mobile */
+    padding: 40px 10%;
     display: flex;
-    flex-direction: column;  /* organiza título e carrossel verticalmente */
-    align-items: center;     /* centraliza horizontalmente */
-    text-align: center;      /* centraliza o texto */
-    box-sizing: border-box;  /* evita bordas extras */
-  }
-
-  /* Título "Trabalhos" */
-  .galeria h2 {
-    font-size: 24px;         /* menor tamanho da fonte */
-    margin-bottom: 20px;     /* espaço entre título e carrossel */
-    text-align: center;      /* centraliza título */
-  }
-
-  /* ======================= CARROSSEL ======================= */
-  .carousel-container {
-    width: 100%;              /* ocupa toda a largura */
-    justify-content: center;  /* centraliza imagens */
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;         /* esconde o que passa da tela */
-    margin-top: 20px;         /* distância do título */
+    text-align: center;
+    width: 100%;
   }
 
-  .carousel {
-    display: flex;
-    gap: 30px;                /* espaço menor entre imagens no mobile */
-    justify-content: center;  /* centraliza linha de imagens */
-    align-items: center;
-  }
+  .galeria h2 { font-size: 24px; margin-bottom: 20px; }
 
-  .carousel img {
-    width: 160px;             /* imagens menores para mobile */
-    height: auto;             /* mantém proporção */
-    opacity: 0.5;             /* imagens laterais mais apagadas */
-    filter: brightness(0.7);
-    border-radius: 10px;
-    transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
-  }
+  .carousel-container { width: 100%; justify-content: center; align-items: center; margin-top: 20px; overflow: hidden; }
+  .carousel { display: flex; gap: 15px; justify-content: center; align-items: center; width: 100%; max-width: 100%; }
+  .carousel img { width: 140px; height: auto; opacity: 0.5; filter: brightness(0.7); border-radius: 10px; }
+  .carousel img.active { transform: scale(1.2); opacity: 1; filter: brightness(1.2); box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b; border: 1px solid #c7a66b; z-index: 10; }
 
-  .carousel img.active {
-    transform: scale(1.2);    /* aumenta apenas a central */
-    opacity: 1;
-    filter: brightness(1.2);
-    box-shadow:
-      0 0 10px #c7a66b,
-      0 0 20px #c7a66b,
-      0 0 30px #c7a66b;
-    border: 1px solid #c7a66b;
-    z-index: 10;
-  }
-
-  /* ======================= SETAS ======================= */
-  .carousel-btn {
-    font-size: 28px;          /* seta menor */
-    padding: 5px 10px;
-    top: 50%;                 /* centraliza verticalmente */
-    transform: translateY(-50%);
-  }
-
-  .carousel-btn.prev { left: 5px; }   /* ajusta distância do canto */
-  .carousel-btn.next { right: 5px; }  /* ajusta distância do canto */
-}
-
-
-
-
-
-
-  
-  /* Carrossel mobile já ajustado no CSS anterior */
-}
-
-/* ======================= AJUSTE DO CARROSSEL SOBRE O TÍTULO ======================= */
-
-/* Wrapper do carrossel - adiciona espaçamento abaixo do título "Trabalhos" */
-.carousel-wrapper {
-  margin-top: 275px; /* Distância entre o título e o carrossel. Aumente ou diminua para ajustar */
-  position: relative; /* Mantém as setas dentro do fluxo do carrossel */
-}
-
-/* Section da galeria - controla o padding da section inteira */
-.galeria {
-  padding: 60px 10% 120px 10%; /* padding-top menor (60px) para subir o título, padding-bottom maior (120px) para distância do footer */
-}
-
-/* Certifica que o carrossel não cubra o título */
-.carousel {
-  position: relative; /* garante que o carrossel fique dentro do fluxo da section */
+  .carousel-btn { font-size: 28px; padding: 5px 10px; top: 50%; transform: translateY(-50%); }
+  .carousel-btn.prev { left: 5px; }
+  .carousel-btn.next { right: 5px; }
 }
