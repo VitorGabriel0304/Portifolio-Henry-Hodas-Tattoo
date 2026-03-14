@@ -16,7 +16,6 @@ body {
   background: #0f0f0f;
   color: white;
   overflow-x: hidden;
-  padding-top: 80px; /* espaço para o header fixo */
 }
 
 /* ======================= PARTICULAS ======================= */
@@ -93,7 +92,7 @@ nav a:hover {
   z-index: 1;
 }
 
-/* FOTOS LATERAIS */
+/* FOTOS */
 .foto-esquerda,
 .foto-direita {
   position: absolute;
@@ -104,14 +103,13 @@ nav a:hover {
   opacity: 0.9;
   filter: brightness(0.7);
 }
+
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
 /* CONTEÚDO CENTRAL DO BANNER */
 .conteudo-banner {
   z-index: 10;
-  position: relative;
-  padding-top: 50px;
 }
 
 /* TÍTULO PRINCIPAL */
@@ -120,19 +118,17 @@ nav a:hover {
   color: white;
   text-shadow: 0 0 10px #c7a66b;
   margin-bottom: 20px;
-  z-index: 11;
 }
 
-/* LOGO DO ESTÚDIO - FLORESCENTE E TRANSPARENTE */
+/* LOGO DO ESTÚDIO - AUMENTADA E TRANSPARENTE */
 .logo-estudio {
   display: block;
-  margin: 0 auto 20px auto;
+  margin: -10px auto 20px auto; /* sobe um pouco a logo */
   max-width: 180px;
   height: auto;
+  opacity: 0.85; /* transparente */
+  z-index: 10;
   position: relative;
-  top: -80px; /* sobe a logo no desktop */
-  opacity: 0.85;
-  z-index: 12;
 }
 
 /* SUBTÍTULO */
@@ -263,12 +259,12 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px 0;
-  background: rgba(50,50,50,0.1);
+  background: rgba(50,50,50,0.1); /* cinza transparente */
   color: #ccc;
   z-index: 1000;
 }
 
-/* ======================= MOBILE ======================= */
+/* MOBILE */
 @media(max-width:900px) {
   header {
     padding: 20px;
@@ -285,27 +281,22 @@ footer {
 
   .banner {
     background: url("../img/tatuagens/henry tatuando.PNG") center/cover;
-    padding-top: 100px; /* garante espaço para o header fixo e não cortar o H */
-  }
-
-  /* Ajustes do título e logo */
-  .logo-banner {
-    font-size: 20px;
-    margin-bottom: 10px;
-    word-break: break-word;
-  }
-
-  .logo-estudio {
-    max-width: 100px;
-    margin-bottom: 10px;
-    top: -60px;
   }
 
   .neon {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .logo-banner {
+    font-size: 24px;
+  }
+
+  .logo-estudio {
+    max-width: 140px;
+    margin: -5px auto 15px auto;
   }
 }
