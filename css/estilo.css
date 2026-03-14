@@ -1,64 +1,69 @@
 /* ======================= FONTE E RESET ======================= */
+/* Importa a fonte Cinzel e define estilos globais de reset */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: 'Cinzel', serif;
-  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
-  user-select: none;
+  margin: 0; /* remove margens padrão */
+  padding: 0; /* remove padding padrão */
+  box-sizing: border-box; /* calcula padding e border dentro do width/height */
+  scroll-behavior: smooth; /* scroll suave */
+  font-family: 'Cinzel', serif; /* fonte principal */
+  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important; /* cursor customizado */
+  user-select: none; /* impede seleção de texto */
 }
 
 /* ======================= BODY ======================= */
 body {
-  background: #0f0f0f;
-  color: white;
-  overflow-x: hidden;
+  background: #0f0f0f; /* fundo preto escuro */
+  color: white; /* cor do texto branca */
+  overflow-x: hidden; /* impede scroll horizontal */
+  position: relative; /* para posicionamento de filhos absolutos */
 }
 
 /* ======================= PARTICULAS ======================= */
 #particulas {
-  position: fixed;
+  position: fixed; /* fixa na tela */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.2;
-  z-index: 0; /* menor que o banner/conteúdo */
+  background: url("https://www.transparenttextures.com/patterns/stardust.png"); /* textura */
+  opacity: 0.2; /* transparência */
+  z-index: 0; /* sempre atrás do conteúdo */
+  pointer-events: none; /* não bloqueia clique */
 }
 
 /* ======================= HEADER ======================= */
 header {
-  position: fixed;
+  position: fixed; /* sempre visível no topo */
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centraliza logo */
   align-items: center;
   padding: 20px 40px;
-  background: rgba(0,0,0,0.0);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  background: rgba(0,0,0,0.0); /* transparente */
+  backdrop-filter: blur(10px); /* efeito blur */
+  z-index: 1000; /* sobre outros elementos */
 }
 
+/* Logo principal */
 .logo {
   font-size: 32px;
   letter-spacing: 6px;
   color: white;
-  text-shadow: 0 0 10px #e29209;
+  text-shadow: 0 0 10px #e29209; /* efeito glow */
   text-align: center;
   white-space: nowrap;
-  position: relative;
   z-index: 1001;
-  line-height: 1.2;
 }
 
+/* Navegação */
 nav {
   position: absolute;
-  right: 40px;
+  right: 40px; /* posiciona no canto direito */
   display: flex;
-  gap: 25px;
+  gap: 25px; /* espaço entre links */
   z-index: 1000;
 }
 
@@ -69,21 +74,22 @@ nav a {
 }
 
 nav a:hover {
-  color: #c7a66b;
+  color: #c7a66b; /* cor hover */
 }
 
 /* ======================= BANNER ======================= */
 .banner {
-  height: 100vh;
+  height: 100vh; /* altura da tela */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  overflow: hidden;
-  z-index: 1; /* abaixo do header, acima das partículas */
+  overflow: hidden; /* corta elementos extras */
+  z-index: 1;
 }
 
+/* Gradiente escuro sobre o banner */
 .banner::before {
   content: "";
   position: absolute;
@@ -93,6 +99,7 @@ nav a:hover {
   z-index: 2;
 }
 
+/* Fotos laterais */
 .foto-esquerda,
 .foto-direita {
   position: absolute;
@@ -101,15 +108,14 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   opacity: 0.9;
-  filter: brightness(0.7);
+  filter: brightness(0.7); /* escurece a imagem */
 }
 
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
-.conteudo-banner {
-  z-index: 10;
-}
+/* Conteúdo do banner */
+.conteudo-banner { z-index: 10; }
 
 .logo-banner {
   font-size: 32px;
@@ -124,9 +130,9 @@ nav a:hover {
   max-width: 180px;
   height: auto;
   opacity: 0.85;
-  position: relative;
 }
 
+/* Texto neon */
 .neon {
   font-size: 64px;
   letter-spacing: 6px;
@@ -143,6 +149,7 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
+/* Botões do banner */
 .botoes {
   display: flex;
   justify-content: center;
@@ -171,7 +178,7 @@ nav a:hover {
   background: #e1306c;
 }
 
-/* SOBRE */
+/* ======================= SOBRE ======================= */
 .sobre {
   padding: 120px 10%;
   text-align: center;
@@ -182,7 +189,7 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-/* GALERIA */
+/* ======================= GALERIA ======================= */
 .galeria {
   padding: 120px 10%;
   text-align: center;
@@ -221,7 +228,7 @@ nav a:hover {
   100% { box-shadow:0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b; }
 }
 
-/* WHATSAPP */
+/* ======================= WHATSAPP ======================= */
 .whatsapp {
   position: fixed;
   bottom: 30px;
@@ -244,35 +251,7 @@ nav a:hover {
   100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
-/* ANIMACAO */
-.animar {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s;
-}
-
-.animar.mostrar {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  background: rgba(50,50,50,0.1);
-  color: #ccc;
-  z-index: 1000;
-  margin-top: 100px;
-}
-
-/* CARROSSEL */
+/* ======================= CARROSSEL ======================= */
 .carousel-container {
   overflow: hidden;
   position: relative;
@@ -299,33 +278,35 @@ footer {
   opacity: 0.5;
   filter: brightness(0.7);
   transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
+  border: none;
+  box-shadow: none;
 }
 
 .carousel img.active {
   transform: scale(1.4);
   opacity: 1;
   filter: brightness(1.2);
-  box-shadow:
-    0 0 10px #c7a66b,
-    0 0 20px #c7a66b,
-    0 0 30px #c7a66b,
-    0 0 40px #c7a66b;
-  border: none; /* REMOVE borda da imagem central */
+  box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b;
+  border: none;
   z-index: 10;
 }
 
+/* Ajuste das setas do carrossel: sobre as imagens, sem distorção */
 .carousel-btn {
   position: absolute;
-  top: 50%;
+  top: 50%; /* centraliza verticalmente */
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   border: none;
   color: white;
   font-size: 40px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 100;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background 0.3s, transform 0.3s;
 }
 
@@ -334,8 +315,20 @@ footer {
   transform: translateY(-50%) scale(1.1);
 }
 
+/* Aqui você pode subir/baixar as setas manualmente alterando top */
 .carousel-btn.prev { left: 20px; }
-.carousel-btn.next { right: 20px; }
+.carousel-btn.next { right: -15px; }
+
+/* ======================= FOOTER ======================= */
+footer {
+  padding: 775px 10%;
+  text-align: center; /* centraliza conteúdo no PC */
+  background: #0a0a0a;
+  color: #fff;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center; /* centraliza verticalmente */
+}
 
 /* ======================= MOBILE ======================= */
 @media(max-width:900px){
@@ -351,7 +344,7 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 0px;
     box-sizing: border-box;
   }
 
@@ -368,6 +361,7 @@ footer {
 
   .foto-esquerda, .foto-direita { display: none; }
 
+  /* Banner mobile totalmente ajustado */
   .banner {
     background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
     flex-direction: column;
@@ -376,8 +370,10 @@ footer {
     text-align: center;
     width: 100%;
     max-width: 100%;
-    border: none; /* remove borda */
-    z-index: 1; /* abaixo do conteúdo */
+    height: 100vh;
+    border: none;
+    box-shadow: none;
+    z-index: 1;
   }
 
   .neon { font-size: 36px; margin: 10px 0; }
@@ -388,7 +384,7 @@ footer {
   .sobre h2 { font-size: 28px; margin-bottom: 20px; }
 
   .galeria {
-    padding: 40px 10%;
+    padding: 100px 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -403,7 +399,12 @@ footer {
   .carousel img { width: 140px; height: auto; opacity: 0.5; filter: brightness(0.7); border-radius: 10px; }
   .carousel img.active { transform: scale(1.2); opacity: 1; filter: brightness(1.2); box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b; border: none; z-index: 10; }
 
-  .carousel-btn { font-size: 28px; padding: 5px 10px; top: 50%; transform: translateY(-50%); }
-  .carousel-btn.prev { left: 5px; }
-  .carousel-btn.next { right: 5px; }
+  .carousel-btn { font-size: 28px; padding: 5px 10px; top: 25px; transform: translateY(-50%); }
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: -10px; }
+
+  footer {
+    padding: 20px 10%;
+    text-align: center;
+  }
 }
