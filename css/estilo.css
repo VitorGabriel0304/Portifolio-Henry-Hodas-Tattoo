@@ -7,11 +7,15 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Cinzel', serif;
+  user-select: none;
   cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
 }
 
 /* ======================= BODY ======================= */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: #0f0f0f;
   color: white;
   overflow-x: hidden;
@@ -150,11 +154,6 @@ nav a:hover {
   transition: 0.3s;
 }
 
-/* REMOVE CURSOR PADRÃO EM BOTOES E LINKS */
-.btn, a, img {
-  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
-}
-
 .btn:hover {
   background: #c7a66b;
   color: black;
@@ -234,15 +233,16 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* FOOTER */
+/* ======================= FOOTER ======================= */
 footer {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 40px;
-  background: black;
-  color: #777;
+  padding: 20px 0;
+  background: rgba(50, 50, 50, 0.1);
+  color: #ccc;
+  z-index: 1000;
 }
 
 /* MOBILE */
@@ -281,12 +281,7 @@ footer {
   }
 }
 
-/* CURSOR E SELECAO */
+/* CURSOR */
 * {
-  user-select: none;
-}
-
-#inicio {
   cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
-  user-select: none;
 }
