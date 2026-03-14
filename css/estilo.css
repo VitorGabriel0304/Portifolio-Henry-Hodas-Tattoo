@@ -268,11 +268,25 @@ footer {
 /* MOBILE */
 @media(max-width:900px) {
   header {
-    padding: 25px 20px; /* aumenta espaço superior e inferior */
+    position: relative;   /* deixa o header no fluxo normal */
+    padding: 40px 20px 20px 20px; /* espaço suficiente em cima */
+    display: flex;
+    flex-direction: column; /* empilha logo e nav */
+    align-items: center;
   }
 
   nav {
     display: none;
+  }
+
+  .logo {
+    position: relative;  /* tira o absolute */
+    top: 0;              /* reseta deslocamento */
+    font-size: 22px;     /* reduz a fonte */
+    letter-spacing: 2px; /* reduz espaçamento */
+    white-space: normal; /* permite quebrar linhas se necessário */
+    text-align: center;
+    margin-bottom: 10px; /* espaçamento abaixo da logo */
   }
 
   .foto-esquerda,
@@ -292,15 +306,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  /* Ajuste da logo do header */
-  .logo {
-    font-size: 22px;           /* reduz tamanho da fonte */
-    letter-spacing: 3px;       /* diminui espaçamento entre letras */
-    top: 10px;                 /* desce um pouco para não cortar */
-    white-space: normal;       /* permite quebrar linha se necessário */
-    text-align: center;        /* centraliza multi-linha */
-  }
-
   .logo-banner {
     font-size: 20px;
     margin-bottom: 10px;
@@ -310,6 +315,6 @@ footer {
   .logo-estudio {
     max-width: 140px;
     margin: -5px auto 15px auto;
-    top: -60px; /* mantém flutuando acima do banner */
+    top: -60px;
   }
 }
