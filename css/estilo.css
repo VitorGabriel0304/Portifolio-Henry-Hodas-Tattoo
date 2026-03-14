@@ -24,36 +24,38 @@ body {
   width: 100%;
   height: 100%;
   background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.2;
+  opacity: 0.2; /* partículas discretas */
   z-index: -1;
 }
 
 /* ======================= HEADER ======================= */
 header {
-  position: fixed;
+  position: relative;               /* fixa no topo */
   top: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;                 /* flex para centralizar */
+  justify-content: center;       /* centraliza horizontal */
+  align-items: center;           /* centraliza vertical */
   padding: 20px 40px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
+  background: rgba(17, 17, 17, 0.329);  /* fundo transparente */
+  backdrop-filter: blur(10px);   /* blur opcional */
   z-index: 1000;
 }
 
+/* ======================= LOGO PRINCIPAL ======================= */
 .logo {
-  font-size: 32px;
-  letter-spacing: 6px;
-  color: white;
-  text-shadow: 0 0 10px #c7a66b;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
+  font-size: 32px;               /* tamanho da fonte */
+  letter-spacing: 6px;           /* espaçamento entre letras */
+  color: white;                  /* cor do texto */
+  text-shadow: 0 0 10px #c7a66b; /* efeito neon */
+  text-align: center;            /* centraliza o texto */
+  white-space: nowrap;           /* mantém em uma linha só */
+  position: relative;            /* remove absolute */
   z-index: 1001;
+  line-height: 1.2;              /* altura da linha */
 }
 
+/* ======================= NAVIGATION ======================= */
 nav {
   position: absolute;
   right: 40px;
@@ -120,10 +122,10 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-/* LOGO DO ESTÚDIO - AUMENTADA E TRANSPARENTE */
+/* LOGO DO ESTÚDIO - TRANSPARENTE */
 .logo-estudio {
   display: block;
-  margin: -10px auto 20px auto; /* sobe um pouco a logo */
+  margin: -10px auto 20px auto;
   max-width: 180px;
   height: auto;
   opacity: 0.85; /* transparente */
@@ -264,12 +266,11 @@ footer {
   z-index: 1000;
 }
 
-/* MOBILE */
-/* MOBILE */
+/* ======================= MOBILE ======================= */
 @media(max-width:900px) {
   header {
     position: relative;   /* deixa o header no fluxo normal */
-    padding: 40px 20px 20px 20px; /* espaço suficiente em cima */
+    padding: 40px 20px 20px 20px;
     display: flex;
     flex-direction: column; /* empilha logo e nav */
     align-items: center;
@@ -280,13 +281,11 @@ footer {
   }
 
   .logo {
-    position: relative;  /* tira o absolute */
-    top: 0;              /* reseta deslocamento */
-    font-size: 22px;     /* reduz a fonte */
-    letter-spacing: 2px; /* reduz espaçamento */
-    white-space: normal; /* permite quebrar linhas se necessário */
+    font-size: 22px;       /* reduz tamanho da fonte */
+    letter-spacing: 2px;   /* reduz espaçamento */
+    margin-bottom: 10px;
+    white-space: nowrap;    /* mantém em uma linha só */
     text-align: center;
-    margin-bottom: 10px; /* espaçamento abaixo da logo */
   }
 
   .foto-esquerda,
