@@ -1,30 +1,30 @@
 /* ======================= FONTE E RESET ======================= */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-  font-family:'Cinzel', serif;
-  cursor:url("https://cur.cursors-4u.net/cursors/cur-9/cur862.cur"), auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Cinzel', serif;
+  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
 }
 
 /* ======================= BODY ======================= */
-body{
-  background:#0f0f0f;
-  color:white;
-  overflow-x:hidden;
+body {
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
 }
 
 /* ======================= PARTICULAS ======================= */
-#particulas{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity:0.2;
-  z-index:-1;
+#particulas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.2;
+  z-index: -1;
 }
 
 /* ======================= HEADER ======================= */
@@ -33,7 +33,7 @@ header {
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center; /* centraliza logo */
+  justify-content: center;
   align-items: center;
   padding: 20px 40px;
   background: rgba(0,0,0,0.4);
@@ -50,7 +50,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  z-index: 1001; /* acima do nav */
+  z-index: 1001;
 }
 
 nav {
@@ -62,13 +62,13 @@ nav {
 }
 
 nav a {
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-nav a:hover{
-  color:#c7a66b;
+nav a:hover {
+  color: #c7a66b;
 }
 
 .menu-toggle {
@@ -76,212 +76,208 @@ nav a:hover{
   position: absolute;
   right: 20px;
   font-size: 24px;
-  cursor: pointer;
-  z-index: 1002; /* acima de tudo no mobile */
+  z-index: 1002;
 }
 
 /* ======================= BANNER ======================= */
-.banner{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
+.banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.banner::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:radial-gradient(circle, transparent 40%, #0f0f0f 100%);
-  z-index:1;
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 40%, #0f0f0f 100%);
+  z-index: 1;
 }
 
 /* FOTOS */
 .foto-esquerda,
-.foto-direita{
-  position:absolute;
-  top:0;
-  width:35%;
-  height:100%;
-  object-fit:cover;
-  opacity:0.9;
-  filter:brightness(0.7);
+.foto-direita {
+  position: absolute;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  filter: brightness(0.7);
 }
 
-.foto-esquerda{ left:0; }
-.foto-direita{ right:0; }
+.foto-esquerda { left: 0; }
+.foto-direita { right: 0; }
 
-.conteudo-banner{
-  z-index:10;
+.conteudo-banner {
+  z-index: 10;
 }
 
-.neon{
-  font-size:64px;
-  letter-spacing:6px;
-  color:#fff;
+.neon {
+  font-size: 64px;
+  letter-spacing: 6px;
+  color: #fff;
   text-shadow:
     0 0 5px #c7a66b,
     0 0 15px #c7a66b,
     0 0 30px #c7a66b;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-.conteudo-banner p{
-  color:#ccc;
-  margin-bottom:30px;
+.conteudo-banner p {
+  color: #ccc;
+  margin-bottom: 30px;
 }
 
 /* BOTOES */
-.botoes{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.btn{
-  padding:14px 30px;
-  border:1px solid #c7a66b;
-  color:white;
-  text-decoration:none;
-  transition:0.3s;
+.btn {
+  padding: 14px 30px;
+  border: 1px solid #c7a66b;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.btn:hover{
-  background:#c7a66b;
-  color:black;
+/* REMOVE CURSOR PADRÃO EM BOTOES E LINKS */
+.btn, a, img {
+  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
 }
 
-.insta{
-  border-color:#e1306c;
+.btn:hover {
+  background: #c7a66b;
+  color: black;
 }
 
-.insta:hover{
-  background:#e1306c;
+.insta {
+  border-color: #e1306c;
+}
+
+.insta:hover {
+  background: #e1306c;
 }
 
 /* SOBRE */
-.sobre{
-  padding:120px 10%;
-  text-align:center;
+.sobre {
+  padding: 120px 10%;
+  text-align: center;
 }
 
-.sobre h2{
-  font-size:40px;
-  margin-bottom:20px;
+.sobre h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 /* GALERIA */
-.galeria{
-  padding:120px 10%;
-  text-align:center;
+.galeria {
+  padding: 120px 10%;
+  text-align: center;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:40px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
-.grid img{
-  width:100%;
-  border-radius:10px;
-  cursor:pointer;
-  transition:0.4s;
-  filter:brightness(0.9);
-}
-
-.grid img:hover{
-  transform:scale(1.07);
-  filter:brightness(1.1);
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.4s;
+  filter: brightness(0.9);
 }
 
 /* WHATSAPP */
-.whatsapp{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  width:65px;
-  height:65px;
-  background:#25d366;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:30px;
-  color:white;
-  animation:whatsappPulse 2s infinite;
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  animation: whatsappPulse 2s infinite;
 }
 
-@keyframes whatsappPulse{
-  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
 /* ANIMACAO */
-.animar{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
 }
 
-.animar.mostrar{
-  opacity:1;
-  transform:translateY(0);
+.animar.mostrar {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* FOOTER */
-footer{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
-  background:black;
-  color:#777;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: black;
+  color: #777;
 }
 
 /* MOBILE */
-@media(max-width:900px){
+@media(max-width:900px) {
   header {
     padding: 20px;
   }
 
-  /* Menu mobile não existe mais */
-  nav{
-    display:none; /* o menu some no mobile */
+  nav {
+    display: none;
   }
 
-  .menu-toggle{
-    display:none; /* botão removido */
+  .menu-toggle {
+    display: none;
   }
 
   .foto-esquerda,
-  .foto-direita{
-    display:none;
+  .foto-direita {
+    display: none;
   }
 
-  .banner{
-    background:url("../img/tatuagens/henry tatuando.PNG") center/cover;
+  .banner {
+    background: url("../img/tatuagens/henry tatuando.PNG") center/cover;
   }
 
-  .neon{
-    font-size:36px;
+  .neon {
+    font-size: 36px;
   }
 
-  .grid{
-    grid-template-columns:1fr;
+  .grid {
+    grid-template-columns: 1fr;
   }
 
-  .logo{
-    font-size:24px;
+  .logo {
+    font-size: 24px;
   }
 }
 
@@ -290,11 +286,7 @@ footer{
   user-select: none;
 }
 
-a, button {
-  cursor: pointer;
-}
-
 #inicio {
-  cursor: pointer;
+  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
   user-select: none;
 }
