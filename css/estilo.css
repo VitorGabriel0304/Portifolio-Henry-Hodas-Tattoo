@@ -28,37 +28,42 @@ body{
 }
 
 /* ======================= HEADER ======================= */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  z-index:1000;
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centraliza logo */
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-.logo{
-  font-size:32px;
-  letter-spacing:6px;
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  text-shadow:0 0 10px #c7a66b;
+.logo {
+  font-size: 32px;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 0 0 10px #c7a66b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1001; /* acima do nav */
 }
 
-nav{
-  position:absolute;
-  right:10%;
+nav {
+  position: absolute;
+  right: 40px;
+  display: flex;
+  gap: 25px;
+  z-index: 1000;
 }
 
-nav a{
+nav a {
   color:white;
   text-decoration:none;
-  margin-left:25px;
   transition:0.3s;
 }
 
@@ -66,13 +71,13 @@ nav a:hover{
   color:#c7a66b;
 }
 
-/* ======================= MENU MOBILE ======================= */
-.menu-toggle{
-  display:none;
-  position:absolute;
-  right:20px;
-  font-size:24px;
-  cursor:pointer;
+.menu-toggle {
+  display: none;
+  position: absolute;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1002; /* acima de tudo no mobile */
 }
 
 /* ======================= BANNER ======================= */
@@ -95,7 +100,7 @@ nav a:hover{
   z-index:1;
 }
 
-/* ======================= FOTOS ======================= */
+/* FOTOS */
 .foto-esquerda,
 .foto-direita{
   position:absolute;
@@ -130,7 +135,7 @@ nav a:hover{
   margin-bottom:30px;
 }
 
-/* ======================= BOTOES ======================= */
+/* BOTOES */
 .botoes{
   display:flex;
   justify-content:center;
@@ -159,7 +164,7 @@ nav a:hover{
   background:#e1306c;
 }
 
-/* ======================= SOBRE ======================= */
+/* SOBRE */
 .sobre{
   padding:120px 10%;
   text-align:center;
@@ -170,7 +175,7 @@ nav a:hover{
   margin-bottom:20px;
 }
 
-/* ======================= GALERIA ======================= */
+/* GALERIA */
 .galeria{
   padding:120px 10%;
   text-align:center;
@@ -197,7 +202,7 @@ nav a:hover{
   box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* ======================= WHATSAPP ======================= */
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   bottom:30px;
@@ -220,7 +225,7 @@ nav a:hover{
   100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* ======================= ANIMACAO ======================= */
+/* ANIMACAO */
 .animar{
   opacity:0;
   transform:translateY(40px);
@@ -232,7 +237,7 @@ nav a:hover{
   transform:translateY(0);
 }
 
-/* ======================= FOOTER ======================= */
+/* FOOTER */
 footer{
   display:flex;
   justify-content:center;
@@ -243,17 +248,19 @@ footer{
   color:#777;
 }
 
-/* ======================= MOBILE ======================= */
+/* MOBILE */
 @media(max-width:900px){
+  header {
+    padding: 20px;
+  }
 
   nav{
-    display:none;
-    flex-direction:column;
-    background:black;
-    position:absolute;
     top:70px;
     right:0;
     width:200px;
+    flex-direction: column;
+    background: black;
+    display: none;
   }
 
   nav.active{
@@ -282,24 +289,20 @@ footer{
   }
 
   .logo{
-    font-size:24px;       /* Corrige o logo cortado */
-    left:50%;
-    transform:translateX(-50%);
-    white-space: nowrap;
+    font-size:24px;
   }
-
 }
 
-/* ======================= CURSOR E SELECAO ======================= */
+/* CURSOR E SELECAO */
 * {
-  user-select: none; /* impede seleção de texto */
+  user-select: none;
 }
 
 a, button {
-  cursor: pointer; /* garante que links e botões tenham cursor correto */
+  cursor: pointer;
 }
 
-#inicio { /* se o seu "início" tiver id="inicio" */
+#inicio {
   cursor: pointer;
   user-select: none;
 }
