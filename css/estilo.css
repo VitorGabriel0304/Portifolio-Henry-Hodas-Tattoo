@@ -299,6 +299,8 @@ footer {
   background: rgba(50,50,50,0.1);
   color: #ccc;
   z-index: 1000;
+    margin-top: 100px; /* aumenta distância do conteúdo acima */
+
 }
 
 /* ======================= MOBILE ======================= */
@@ -398,4 +400,250 @@ footer {
     0 0 40px #c7a66b;
   border: 2px solid #f8a412;
   animation: neonPulse 1.5s infinite alternate;
+}
+
+/* ======================= CARROSSEL GALERIA ======================= */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.carousel {
+  display: flex;
+  gap: 80px;
+  transition: transform 0.5s ease;
+  user-select: none;
+}
+
+.carousel img {
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 0.5s, opacity 0.5s, box-shadow 0.5s;
+  cursor: pointer;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.carousel img.active {
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow:
+    0 0 10px #c7a66b,
+    0 0 20px #c7a66b,
+    0 0 30px #c7a66b;
+  border: 2px solid #c7a66b;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .carousel img {
+    width: 180px;
+  }
+}
+
+/* ======================= CARROSSEL GALERIA ======================= */
+/* ======================= CARROSSEL GALERIA ======================= */
+
+/* Container geral do carrossel */
+.carousel-container {
+  position: relative;          /* necessário para posicionar setas */
+  width: 100%;
+  overflow: hidden;            /* esconde o que sai da tela */
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Linha de imagens que se move */
+.carousel {
+  display: flex;
+  gap: 150px;                  /* aumenta o espaço entre as imagens */
+  transition: transform 0.5s ease; /* animação suave ao mudar de imagem */
+  user-select: none;           /* impede seleção do mouse */
+}
+
+/* Imagens do carrossel */
+.carousel img {
+  width: 300px;                /* largura da imagem */
+  height: auto;                /* mantém proporção */
+  border-radius: 10px;         /* cantos arredondados */
+  cursor: pointer;
+  flex-shrink: 0;              /* evita que encolham */
+  opacity: 0.5;                /* imagens laterais mais apagadas */
+  filter: brightness(0.7);     /* escurece as laterais */
+  transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
+}
+
+/* Imagem central destacada */
+.carousel img.active {
+  transform: scale(1.4);       /* aumenta a imagem do meio */
+  opacity: 1;                  /* totalmente visível */
+  filter: brightness(1.2);     /* mais clara */
+  box-shadow:
+    0 0 10px #c7a66b,
+    0 0 20px #c7a66b,
+    0 0 30px #c7a66b,
+    0 0 40px #c7a66b;          /* efeito neon dourado */
+  border: 1px solid #c7a66b;
+  z-index: 10;                 /* sempre acima das laterais */
+}
+
+/* ======================= SETAS ======================= */
+
+/* Botão geral das setas */
+.carousel-btn {
+  position: absolute;
+  top: 50%;                    /* centralizado verticalmente */
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 40px;             /* seta maior e nítida */
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 100;                /* acima das imagens */
+  transition: background 0.3s, transform 0.3s;
+}
+
+/* Efeito hover nas setas */
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.8);
+  transform: translateY(-50%) scale(1.1); /* aumenta levemente ao passar mouse */
+}
+
+/* Setas esquerda e direita */
+.carousel-btn.prev {
+  left: 20px;                  /* distância do canto esquerdo */
+}
+
+.carousel-btn.next {
+  right: 20px;                 /* distância do canto direito */
+}
+
+/* ======================= MOBILE ======================= */
+/* ======================= MOBILE CENTRALIZAÇÃO GERAL ======================= */
+@media(max-width:900px){
+
+  /* Garante que todas as sections e main fiquem centralizados */
+  body, main, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centraliza horizontalmente */
+    justify-content: center;  /* centraliza verticalmente dentro do section, se necessário */
+    text-align: center;       /* centraliza texto */
+    width: 100%;              /* ocupa toda a largura da tela */
+    padding-left: 10px;       /* evita que fique colado na borda */
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Banner */
+  .banner {
+    flex-direction: column;   /* imagens desaparecem, mas conteúdo central continua centralizado */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Ajusta a logo e títulos */
+  .logo, .neon, .logo-banner {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+/* ======================= GALERIA ======================= */
+  .galeria {
+    padding: 40px 10%;       /* menos padding para mobile */
+    display: flex;
+    flex-direction: column;  /* organiza título e carrossel verticalmente */
+    align-items: center;     /* centraliza horizontalmente */
+    text-align: center;      /* centraliza o texto */
+    box-sizing: border-box;  /* evita bordas extras */
+  }
+
+  /* Título "Trabalhos" */
+  .galeria h2 {
+    font-size: 24px;         /* menor tamanho da fonte */
+    margin-bottom: 20px;     /* espaço entre título e carrossel */
+    text-align: center;      /* centraliza título */
+  }
+
+  /* ======================= CARROSSEL ======================= */
+  .carousel-container {
+    width: 100%;              /* ocupa toda a largura */
+    justify-content: center;  /* centraliza imagens */
+    align-items: center;
+    overflow: hidden;         /* esconde o que passa da tela */
+    margin-top: 20px;         /* distância do título */
+  }
+
+  .carousel {
+    display: flex;
+    gap: 30px;                /* espaço menor entre imagens no mobile */
+    justify-content: center;  /* centraliza linha de imagens */
+    align-items: center;
+  }
+
+  .carousel img {
+    width: 160px;             /* imagens menores para mobile */
+    height: auto;             /* mantém proporção */
+    opacity: 0.5;             /* imagens laterais mais apagadas */
+    filter: brightness(0.7);
+    border-radius: 10px;
+    transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
+  }
+
+  .carousel img.active {
+    transform: scale(1.2);    /* aumenta apenas a central */
+    opacity: 1;
+    filter: brightness(1.2);
+    box-shadow:
+      0 0 10px #c7a66b,
+      0 0 20px #c7a66b,
+      0 0 30px #c7a66b;
+    border: 1px solid #c7a66b;
+    z-index: 10;
+  }
+
+  /* ======================= SETAS ======================= */
+  .carousel-btn {
+    font-size: 28px;          /* seta menor */
+    padding: 5px 10px;
+    top: 50%;                 /* centraliza verticalmente */
+    transform: translateY(-50%);
+  }
+
+  .carousel-btn.prev { left: 5px; }   /* ajusta distância do canto */
+  .carousel-btn.next { right: 5px; }  /* ajusta distância do canto */
+}
+
+
+
+
+
+
+  
+  /* Carrossel mobile já ajustado no CSS anterior */
+}
+
+/* ======================= AJUSTE DO CARROSSEL SOBRE O TÍTULO ======================= */
+
+/* Wrapper do carrossel - adiciona espaçamento abaixo do título "Trabalhos" */
+.carousel-wrapper {
+  margin-top: 275px; /* Distância entre o título e o carrossel. Aumente ou diminua para ajustar */
+  position: relative; /* Mantém as setas dentro do fluxo do carrossel */
+}
+
+/* Section da galeria - controla o padding da section inteira */
+.galeria {
+  padding: 60px 10% 120px 10%; /* padding-top menor (60px) para subir o título, padding-bottom maior (120px) para distância do footer */
+}
+
+/* Certifica que o carrossel não cubra o título */
+.carousel {
+  position: relative; /* garante que o carrossel fique dentro do fluxo da section */
 }
