@@ -30,14 +30,14 @@ body {
 
 /* ======================= HEADER ======================= */
 header {
-  position: relative;               /* fixa no topo */
+  position: fixed;               /* fixa no topo */
   top: 0;
   width: 100%;
   display: flex;                 /* flex para centralizar */
   justify-content: center;       /* centraliza horizontal */
   align-items: center;           /* centraliza vertical */
   padding: 20px 40px;
-  background: rgba(17, 17, 17, 0.329);  /* fundo transparente */
+  background: rgba(0,0,0,0.0);  /* fundo transparente */
   backdrop-filter: blur(10px);   /* blur opcional */
   z-index: 1000;
 }
@@ -47,7 +47,7 @@ header {
   font-size: 32px;               /* tamanho da fonte */
   letter-spacing: 6px;           /* espaçamento entre letras */
   color: white;                  /* cor do texto */
-  text-shadow: 0 0 10px #c7a66b; /* efeito neon */
+  text-shadow: 0 0 10px #e29209; /* efeito neon */
   text-align: center;            /* centraliza o texto */
   white-space: nowrap;           /* mantém em uma linha só */
   position: relative;            /* remove absolute */
