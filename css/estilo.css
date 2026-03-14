@@ -283,17 +283,27 @@ footer {
     background: url("../img/tatuagens/henry tatuando.PNG") center/cover;
   }
 
+  /* Título principal e logo central */
+  .logo-banner {
+    font-size: 20px;         /* menor tamanho para caber */
+    margin-bottom: 15px;     /* menos espaço */
+    word-break: break-word;  /* força quebra se necessário */
+  }
+
+  /* Logo do estúdio flutuante */
+  .logo-estudio {
+    max-width: 100px;        /* reduz para caber na tela */
+    margin-bottom: 15px;     
+  }
+
   .neon {
-    font-size: 36px;
+    font-size: 28px;         /* subtítulo menor */
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
-
-  .logo-banner {
-    font-size: 24px;
-  }
+}
 /* LOGO DO ESTÚDIO */
 .logo-estudio {
   display: block;                  /* mantém a logo como bloco, centralizada horizontalmente */
