@@ -254,21 +254,13 @@ footer{
     padding: 20px;
   }
 
+  /* Menu mobile não existe mais */
   nav{
-    top:70px;
-    right:0;
-    width:200px;
-    flex-direction: column;
-    background: black;
-    display: none;
-  }
-
-  nav.active{
-    display:flex;
+    display:none; /* o menu some no mobile */
   }
 
   .menu-toggle{
-    display:block;
+    display:none; /* botão removido */
   }
 
   .foto-esquerda,
