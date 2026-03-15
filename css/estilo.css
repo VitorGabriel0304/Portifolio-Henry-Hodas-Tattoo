@@ -195,6 +195,28 @@ nav a:hover {
   text-align: center;
 }
 
+.galeria h2{
+
+  margin-bottom: 200px; 
+  /* aumenta espaço ENTRE o texto e as imagens (empurra as imagens para BAIXO) */
+
+  margin-top: 40px;
+  /* sobe o texto "TRABALHOS" para CIMA */
+
+  text-align: center;
+  /* centraliza o texto */
+
+  font-size: 40px;
+  /* tamanho do texto */
+}
+
+
+
+
+
+
+
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -321,9 +343,9 @@ nav a:hover {
 
 /* ======================= FOOTER ======================= */
 footer {
-  padding: 775px 10%;
+  padding: 120px 10%;
   text-align: center; /* centraliza conteúdo no PC */
-  background: #0a0a0a;
+  background: #0a0a0a00;
   color: #fff;
   display: flex;
   justify-content: center; /* centraliza horizontalmente */
@@ -392,7 +414,7 @@ footer {
     width: 100%;
   }
 
-  .galeria h2 { font-size: 24px; margin-bottom: 20px; }
+  .galeria h2 { font-size: 24px; margin-bottom: 100px; }
 
   .carousel-container { width: 100%; justify-content: center; align-items: center; margin-top: 20px; overflow: hidden; }
   .carousel { display: flex; gap: 15px; justify-content: center; align-items: center; width: 100%; max-width: 100%; }
