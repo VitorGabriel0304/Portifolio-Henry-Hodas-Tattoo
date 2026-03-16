@@ -41,7 +41,7 @@ header {
   display: flex;
   justify-content: center; /* centraliza logo */
   align-items: center;
-  padding: 20px 40px;
+  padding: 5px 40px;
   background: rgba(0,0,0,0.0); /* transparente */
   backdrop-filter: blur(10px); /* efeito blur */
   z-index: 1000; /* sobre outros elementos */
@@ -292,12 +292,13 @@ nav a:hover {
 }
 
 .carousel img {
-  width: 300px;
+  width: 250PX;     /* ======================= TAMAMHO DA IMAGEM DA GALERIA======================= */
+
   height: auto;
   border-radius: 10px;
   cursor: pointer;
   flex-shrink: 0;
-  opacity: 0.5;
+  opacity: 0.3;
   filter: brightness(0.7);
   transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
   border: none;
@@ -372,7 +373,7 @@ footer {
 
   header {
     position: relative;
-    padding: 30px 20px 20px 20px;
+    padding: 15px 15px 15Px 15px;
     flex-direction: column;
     align-items: center;
   }
