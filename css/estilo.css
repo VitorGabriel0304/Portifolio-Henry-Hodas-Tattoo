@@ -41,8 +41,8 @@ header {
   display: flex;
   justify-content: center; /* centraliza logo */
   align-items: center;
-  padding: 5px 40px;
-  background: rgba(0,0,0,0.0); /* transparente */
+  padding: 5px 1px;
+  background: rgba(0,0,0,0); /* transparente */
   backdrop-filter: blur(10px); /* efeito blur */
   z-index: 1000; /* sobre outros elementos */
 }
@@ -376,6 +376,7 @@ footer {
     padding: 7px 10px 0Px 10px;
     flex-direction: column;
     align-items: center;
+    opacity:1;
   }
 
   nav { display: none; }
