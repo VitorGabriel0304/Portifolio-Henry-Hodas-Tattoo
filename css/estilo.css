@@ -373,15 +373,15 @@ footer {
 
   header {
     position: relative;
-    padding: 7px 10px 0Px 10px;
+    padding: 0px 0px 0px 0px;
     flex-direction: column;
     align-items: center;
-    opacity:1;
+    opacity:0;
   }
 
   nav { display: none; }
 
-  .logo { font-size: 22px; margin-bottom: 10px; letter-spacing: 2px; text-align: center; }
+  .logo { font-size: 0; margin-bottom: 0; letter-spacing: 0; text-align: center; }
 
   .foto-esquerda, .foto-direita { display: none; }
 
@@ -424,8 +424,8 @@ footer {
   .carousel img.active { transform: scale(1.2); opacity: 1; filter: brightness(1.2); box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b; border: none; z-index: 10; }
 
   .carousel-btn { font-size: 28px; padding: 5px 10px; top: 25px; transform: translateY(-50%); }
-  .carousel-btn.prev { left: 10px; }
-  .carousel-btn.next { right: -10px; }
+  .carousel-btn.prev { left: 500px; }
+  .carousel-btn.next { right: -500px; }
 
   footer {
     padding: 20px 10%;
