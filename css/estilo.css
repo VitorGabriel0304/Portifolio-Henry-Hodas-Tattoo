@@ -430,6 +430,22 @@ footer {
     padding: 20px 10%;
     text-align: center;
   }
+
+.logo-estudio{
+
+position:absolute;
+
+top:-255px;
+
+right:-45%;   /* distância da borda direita */
+
+width:125px;
+
+margin:0;
+
+}
+
+
 }
 
 
@@ -485,7 +501,7 @@ footer {
 
 .grid-estudio img:hover{
 
-  transform:scale(1.07);
+  transform:scale(1.07);zz
 
   filter:brightness(1.15);
 
@@ -511,6 +527,61 @@ footer {
 
   width:140px;
   /* tamanho menor no celular */
+
+}
+
+}
+
+
+
+
+/* ======================= LOGO DO ESTÚDIO ======================= */
+
+.logo-estudio{
+
+display:block;              /* permite centralizar com margin */
+margin:0 auto 40px auto;    /* centraliza horizontalmente */
+
+max-width:240px;            /* tamanho da logo */
+height:auto;
+
+position:relative;
+
+/* brilho neon dourado */
+filter:
+drop-shadow(0 0 6px #c7a66b)
+drop-shadow(0 0 14px #c7a66b)
+drop-shadow(0 0 28px #c7a66b)
+drop-shadow(0 0 45px #c7a66b);
+
+/* animação de neon */
+animation:neonLogo 2.5s infinite alternate;
+
+}
+
+
+
+/* ======================= ANIMAÇÃO DO NEON ======================= */
+
+@keyframes neonLogo{
+
+0%{
+
+filter:
+drop-shadow(0 0 6px #c7a66b)
+drop-shadow(0 0 14px #c7a66b)
+drop-shadow(0 0 28px #c7a66b)
+drop-shadow(0 0 40px #c7a66b);
+
+}
+
+100%{
+
+filter:
+drop-shadow(0 0 10px #fff3c0)
+drop-shadow(0 0 22px #c7a66b)
+drop-shadow(0 0 45px #c7a66b)
+drop-shadow(0 0 70px #c7a66b);
 
 }
 

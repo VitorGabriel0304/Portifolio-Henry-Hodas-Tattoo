@@ -4,83 +4,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= TITULO DO SITE ================= -->
 <title>Henry Hodas Tattoo</title>
 
-<!-- Font Awesome -->
+<!-- ================= ICONES (INSTAGRAM / WHATSAPP) ================= -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="css/estilo.css?v=21">
+<!-- ================= CSS DO SITE ================= -->
+<link rel="stylesheet" href="css/estilo.css?v=22">
 
 </head>
 
 <body>
 
+<!-- ================= FUNDO DE PARTICULAS ================= -->
 <div id="particulas"></div>
 
 
 
-  <!-- ================= TITULO PRINCIPAL; BOTOES INICIO SOBRE E GALERIA ================= -->
-
-
+<!-- ================= HEADER / TOPO DO SITE ================= -->
 
 <header>
+
+  <!-- ================= NOME DO ESTÚDIO ================= -->
   <h1 class="logo">Henry Hodas Tattoo</h1>
 
+  <!-- ================= MENU DE NAVEGAÇÃO ================= -->
   <nav>
     <a href="#inicio">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#galeria">Galeria</a>
   </nav>
+
 </header>
 
 
 
 
 
-
-  <!-- ================= IMAGEM DO SITE DESKTOP , FOTO DA DIREITA E ESQUERDA ================= -->
-
+<!-- ================= CONTEUDO PRINCIPAL ================= -->
 
 <main class="conteudo-principal">
+
+  <!-- ================= BANNER INICIAL ================= -->
   <section id="inicio" class="banner">
+
+    <!-- ================= IMAGENS LATERAIS DO BANNER ================= -->
     <img src="img/tatuagens/henry tatuando.PNG" class="foto-esquerda">
     <img src="img/tatuagens/henry pessoal.jpeg" class="foto-direita">
 
 
 
-
-
-
-  <!-- ================= TEXTO NO INICIO SO SITE  ================= -->
-
-
+    <!-- ================= CONTEUDO CENTRAL DO BANNER ================= -->
     <div class="conteudo-banner">
+
+      <!-- ================= LOGO DO ESTÚDIO ================= -->
+      <!-- Esta imagem fica acima do texto "Arte na Pele" -->
+      <!-- IMPORTANTE: colocar a logo PNG transparente na pasta /img -->
+      <img src="img/logo/LOGO DOURADA.png" class="logo-estudio" alt="Logo Henry Hodas Tattoo">
+
+
+
+      <!-- ================= TITULO PRINCIPAL DO BANNER ================= -->
       <h2 class="neon">Arte na Pele</h2>
+
+      <!-- ================= DESCRIÇÃO ================= -->
       <p>Tatuagens exclusivas com identidade e estilo.</p>
 
 
-  <!-- ================= BOTOES VER TRABALHOS E INSTAGRAM================= -->
 
-
+      <!-- ================= BOTÕES DO BANNER ================= -->
       <div class="botoes">
+
+        <!-- BOTÃO VER TRABALHOS -->
         <a href="#galeria" class="btn">Ver Trabalhos</a>
+
+        <!-- BOTÃO INSTAGRAM -->
         <a href="https://www.instagram.com/henryhodas.tattoo/" target="_blank" class="btn insta">
           <i class="fa-brands fa-instagram"></i> Instagram
         </a>
+
       </div>
+
     </div>
+
   </section>
+
+
 
 
 
   <!-- ================= SOBRE O ARTISTA ================= -->
 
-
   <section id="sobre" class="sobre animar">
+
     <h2>Sobre o Artista</h2>
+
     <p>
-     Sou tatuador, desenhista e formado em Design pela Unesp. Trago para a tatuagem uma visão artística e técnica que vai além da aplicação na pele. Cada trabalho que desenvolvo é pensado como um projeto único, onde estética, composição e precisão caminham juntas para criar algo realmente marcante.
+Sou tatuador, desenhista e formado em Design pela Unesp. Trago para a tatuagem uma visão artística e técnica que vai além da aplicação na pele. Cada trabalho que desenvolvo é pensado como um projeto único, onde estética, composição e precisão caminham juntas para criar algo realmente marcante.
 
 O desenho sempre foi a base do meu trabalho. Através dele, transformo ideias, histórias e referências em peças exclusivas, desenvolvidas com atenção a anatomia do corpo e à harmonia visual da tatuagem. Acredito que uma boa tatuagem nasce de um bom projeto.
 
@@ -88,15 +110,19 @@ Sou extremamente criterioso e perfeccionista em cada etapa do processo, desde a 
 
 Mais do que aplicar tinta na pele, meu objetivo é criar trabalhos que tenham identidade, presença e que continuem fortes e elegantes com o passar dos anos.
     </p>
+
   </section>
 
 
-  <!-- ==============  SOBRE O AMBIENTE ================= -->
 
 
+
+  <!-- ================= SOBRE O ESTÚDIO ================= -->
 
   <section id="estudio" class="sobre animar">
+
     <h2>Sobre o Ambiente</h2>
+
     <p>
       Nosso estúdio oferece um ambiente acolhedor, moderno e totalmente equipado,
       garantindo conforto e segurança para você enquanto cria sua arte na pele.
@@ -104,55 +130,82 @@ Mais do que aplicar tinta na pele, meu objetivo é criar trabalhos que tenham id
 
 
 
-  <!-- ================= GALERIA ESTUDIO================= -->
-
+    <!-- ================= GALERIA DO ESTÚDIO ================= -->
 
     <div class="grid-estudio">
+
       <img src="img/estudio/estudio1.jpg" alt="Estúdio 1">
       <img src="img/estudio/ESTUDIO2.jpg" alt="Estúdio 2">
       <img src="img/estudio/ESTUDIO3.jpg" alt="Estúdio 3">
+
     </div>
+
   </section>
 
 
 
 
-  <!-- ================= GALERIA CARROSSEL ================= -->
+
+  <!-- ================= GALERIA DE TATUAGENS ================= -->
+
 <section id="galeria" class="galeria animar">
+
   <h2>Trabalhos</h2>
+
   <div class="carousel-wrapper">
+
+    <!-- BOTÃO ESQUERDA -->
     <button class="carousel-btn prev">&#10094;</button>
+
     <div class="carousel-view">
+
       <div class="carousel">
-        <img src="img/tatuagens/henry 3.JPEG" alt="">
-        <img src="img/tatuagens/henry 4.JPEG" alt="">
-        <img src="img/tatuagens/henry 5.PNG" alt="">
-        <img src="img/tatuagens/henry 6.PNG" alt="">
-        <img src="img/tatuagens/henry 9.PNG" alt="">
-        <img src="img/tatuagens/Hnery 2.PNG" alt="">
+
+        <img src="img/tatuagens/henry 3.JPEG">
+        <img src="img/tatuagens/henry 4.JPEG">
+        <img src="img/tatuagens/henry 5.PNG">
+        <img src="img/tatuagens/henry 6.PNG">
+        <img src="img/tatuagens/henry 9.PNG">
+        <img src="img/tatuagens/Hnery 2.PNG">
+
       </div>
+
     </div>
+
+    <!-- BOTÃO DIREITA -->
     <button class="carousel-btn next">&#10095;</button>
+
   </div>
+
 </section>
+
 </main>
 
 
-  <!-- ================= BOTAO  whatsapp ================= -->
 
 
+
+<!-- ================= BOTÃO WHATSAPP ================= -->
 
 <a href="https://wa.me/5514998409331" class="whatsapp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-  <!-- ================= FOOTER DO SITE DESKTOP E MOBILE ================= -->
 
+
+
+
+<!-- ================= RODAPÉ ================= -->
 
 <footer>
   <p>© 2026 Henry Hodas Tattoo</p>
 </footer>
 
-<script src="js/script.js?v=21"></script>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/script.js?v=22"></script>
+
 </body>
 </html>
