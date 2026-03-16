@@ -431,3 +431,87 @@ footer {
     text-align: center;
   }
 }
+
+
+
+/* ======================= GALERIA DO ESTÚDIO ======================= */
+/* coloque este código NO FINAL do CSS */
+
+.grid-estudio{
+
+  display:flex; 
+  /* coloca as fotos em linha horizontal */
+
+  justify-content:center; 
+  /* centraliza as fotos */
+
+  align-items:center;
+
+  gap:40px; 
+  /* espaço entre as fotos */
+
+  margin-top:60px;
+
+  flex-wrap:wrap; 
+  /* no celular quebra linha automaticamente */
+
+}
+
+
+/* ======================= IMAGENS DO ESTÚDIO ======================= */
+
+.grid-estudio img{
+
+  width:220px;
+  /* 🔧 TAMANHO DAS FOTOS DO ESTÚDIO
+     você pode alterar aqui
+     180px = pequeno
+     220px = médio
+     260px = grande
+  */
+
+  height:auto;
+
+  border-radius:10px;
+
+  transition:0.4s;
+
+  filter:brightness(0.9);
+
+}
+
+
+/* ======================= HOVER DAS FOTOS ======================= */
+
+.grid-estudio img:hover{
+
+  transform:scale(1.07);
+
+  filter:brightness(1.15);
+
+  box-shadow:
+  0 0 10px #c7a66b,
+  0 0 20px #c7a66b,
+  0 0 30px #c7a66b;
+
+}
+
+
+/* ======================= MOBILE ======================= */
+
+@media(max-width:900px){
+
+.grid-estudio{
+
+  gap:20px;
+
+}
+
+.grid-estudio img{
+
+  width:140px;
+  /* tamanho menor no celular */
+
+}
+
+}
