@@ -339,12 +339,12 @@ nav a:hover {
 }
 
 /* Aqui você pode subir/baixar as setas manualmente alterando top */
-.carousel-btn.prev { left: 20px; }
-.carousel-btn.next { right: -15px; }
+.carousel-btn.prev { left: -120px; }
+.carousel-btn.next { right: -100px; }
 
 /* ======================= FOOTER ======================= */
 footer {
-  padding: 120px 10%;
+  padding: 50px 10%;
   text-align: center; /* centraliza conteúdo no PC */
   background: #0a0a0a00;
   color: #fff;
@@ -367,7 +367,7 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 0 0px;
+    padding: 20 0px;
     box-sizing: border-box;
   }
 
@@ -376,12 +376,11 @@ footer {
     padding: 0px 0px 0px 0px;
     flex-direction: column;
     align-items: center;
-    opacity:0;
-  }
+    opacity:1.1;  }
 
   nav { display: none; }
 
-  .logo { font-size: 0; margin-bottom: 0; letter-spacing: 0; text-align: center; }
+  .logo { font-size: 10; margin-bottom: 10; letter-spacing: 0; text-align: center; }
 
   .foto-esquerda, .foto-direita { display: none; }
 
@@ -424,20 +423,20 @@ footer {
   .carousel img.active { transform: scale(1.2); opacity: 1; filter: brightness(1.2); box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b; border: none; z-index: 10; }
 
   .carousel-btn { font-size: 28px; padding: 5px 10px; top: 25px; transform: translateY(-50%); }
-  .carousel-btn.prev { left: 500px; }
+  .carousel-btn.prev { left: 700px; }
   .carousel-btn.next { right: -500px; }
 
   footer {
-    padding: 20px 10%;
+    padding: 20px 0%;
     text-align: center;
   }
 .logo-estudio{
 
 position:absolute;
 
-top:-200px;
+top:450px;
 
-right:-27%;      /* encosta na borda direita da tela */
+right: 0%;      /* encosta na borda direita da tela */
 
 width:125px;
 
