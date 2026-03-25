@@ -22,10 +22,8 @@ body {
 /* ======================= PARTICULAS ======================= */
 #particulas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: url("https://www.transparenttextures.com/patterns/stardust.png");
   opacity: 0.2;
   z-index: 0;
@@ -70,9 +68,7 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #c7a66b;
-}
+nav a:hover { color: #c7a66b; }
 
 /* ======================= BANNER ======================= */
 .banner {
@@ -89,25 +85,22 @@ nav a:hover {
 .banner::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background: radial-gradient(circle, transparent 40%, #0f0f0f 100%);
   z-index: 2;
 }
 
-.foto-esquerda,
-.foto-direita {
+.foto-esquerda, .foto-direita {
   position: absolute;
   top: 0;
-  width: 35%;
-  height: 100%;
+  width: 35%; height: 100%;
   object-fit: cover;
   opacity: 0.9;
   filter: brightness(0.7);
 }
 
 .foto-esquerda { left: 0; }
-.foto-direita { right: 0; }
+.foto-direita  { right: 0; }
 
 .conteudo-banner { z-index: 10; }
 
@@ -118,22 +111,11 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.logo-estudio {
-  display: block;
-  margin: -10px auto 20px auto;
-  max-width: 180px;
-  height: auto;
-  opacity: 0.85;
-}
-
 .neon {
   font-size: 64px;
   letter-spacing: 6px;
   color: #fff;
-  text-shadow:
-    0 0 5px #c7a66b,
-    0 0 15px #c7a66b,
-    0 0 30px #c7a66b;
+  text-shadow: 0 0 5px #c7a66b, 0 0 15px #c7a66b, 0 0 30px #c7a66b;
   margin-bottom: 20px;
 }
 
@@ -157,18 +139,10 @@ nav a:hover {
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: #c7a66b;
-  color: black;
-}
+.btn:hover { background: #c7a66b; color: black; }
 
-.insta {
-  border-color: #e1306c;
-}
-
-.insta:hover {
-  background: #e1306c;
-}
+.insta       { border-color: #e1306c; }
+.insta:hover { background: #e1306c; }
 
 /* ======================= SOBRE ======================= */
 .sobre {
@@ -183,57 +157,104 @@ nav a:hover {
 
 /* ======================= GALERIA ======================= */
 .galeria {
-  padding: 120px 10%;
+  padding: 120px 0;
   text-align: center;
 }
 
 .galeria h2 {
-  margin-bottom: 200px;
-  margin-top: 40px;
-  text-align: center;
   font-size: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
   margin-top: 40px;
+  margin-bottom: 80px;
 }
 
-.grid img {
+/* ======================= SETAS — OCULTAS ======================= */
+.carousel-btn {
+  display: none !important;
+}
+
+/* ======================= CARROSSEL ======================= */
+
+/*
+  overflow: hidden no wrapper corta o que sai.
+  padding vertical grande = espaço para a imagem central crescer sem ser cortada.
+  mask-image = fade suave nas laterais.
+*/
+.carousel-wrapper {
+  position: relative;
   width: 100%;
-  border-radius: 10px;
-  transition: 0.4s, box-shadow 0.4s, filter 0.4s;
-  filter: brightness(0.9);
+  overflow: hidden;
+  padding: 60px 0;          /* espaço para o scale da imagem ativa não ser cortado */
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
 }
 
-.grid img:hover,
-.grid img:active {
-  transform: scale(1.07);
-  filter: brightness(1.15);
+.carousel-view {
+  width: 100%;
+  overflow: visible;        /* deixa o scale da .active aparecer */
+}
+
+.carousel {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  width: max-content;
+  /* sem animação CSS — o JS controla a posição via translateX */
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ======================= IMAGENS — ESTADO PADRÃO ======================= */
+.carousel img {
+  width: 260px;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  /* SEM border, SEM outline, SEM box-shadow padrão — elimina a "linha" */
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  filter: brightness(0.55) saturate(0.7);
+  transform: scale(0.88);
+  transition:
+    transform  0.5s ease,
+    filter     0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* ======================= IMAGEM CENTRAL ATIVA ======================= */
+.carousel img.active {
+  transform: scale(1.18);
+  filter: brightness(1.1) saturate(1.05);
   box-shadow:
-    0 0 10px #c7a66b,
-    0 0 20px #c7a66b,
+    0 0 14px #c7a66b,
     0 0 30px #c7a66b,
-    0 0 40px #c7a66b;
-  border: 2px solid #c7a66b;
-  animation: neonPulse 1.5s infinite alternate;
-}
-
-@keyframes neonPulse {
-  0%   { box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b; }
-  50%  { box-shadow: 0 0 20px #fff6d1, 0 0 40px #fff6d1, 0 0 60px #fff6d1, 0 0 80px #fff6d1; }
-  100% { box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b; }
+    0 0 55px #c7a66b;
+  z-index: 10;
+  position: relative;
 }
 
 /* ======================= WHATSAPP ======================= */
 .whatsapp {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 65px;
-  height: 65px;
+  bottom: 30px; right: 30px;
+  width: 65px; height: 65px;
   background: #25d366;
   border-radius: 50%;
   display: flex;
@@ -241,236 +262,26 @@ nav a:hover {
   justify-content: center;
   font-size: 30px;
   color: white;
+  text-decoration: none;
   animation: whatsappPulse 2s infinite;
+  z-index: 999;
 }
 
 @keyframes whatsappPulse {
-  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-  70%  { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  0%   { box-shadow: 0 0 0 0    rgba(37,211,102,0.7); }
+  70%  { box-shadow: 0 0 0 20px rgba(37,211,102,0);   }
+  100% { box-shadow: 0 0 0 0    rgba(37,211,102,0);   }
 }
-
-/* ======================= CARROSSEL ======================= */
-
-/* BUG CORRIGIDO: wrapper precisa de position relative para ancorar os botões */
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* BUG CORRIGIDO: overflow hidden aqui para cortar as imagens que saem do frame */
-.carousel-view {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel {
-  display: flex;
-  gap: 80px;
-  transition: transform 0.5s ease;
-  user-select: none;
-}
-
-.carousel img {
-  width: 250px;
-  height: auto;
-  border-radius: 10px;
-  cursor: pointer;
-  flex-shrink: 0;
-  opacity: 0.3;
-  filter: brightness(0.7);
-  transition: transform 0.6s, opacity 0.6s, filter 0.6s, box-shadow 0.6s;
-  border: none;
-  box-shadow: none;
-}
-
-.carousel img.active {
-  transform: scale(1.4);
-  opacity: 1;
-  filter: brightness(1.2);
-  box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b;
-  border: none;
-  z-index: 10;
-}
-
-/* BUG CORRIGIDO: botões posicionados dentro do wrapper com valores corretos */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  font-size: 40px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.carousel-btn:hover {
-  background: rgba(0,0,0,0.8);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
 
 /* ======================= FOOTER ======================= */
 footer {
   padding: 50px 10%;
   text-align: center;
-  background: #0a0a0a00;
+  background: transparent;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* ======================= MOBILE ======================= */
-@media (max-width: 900px) {
-
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  body, main, section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0px; /* BUG CORRIGIDO: era "20 0px" sem unidade */
-    box-sizing: border-box;
-  }
-
-  header {
-    position: relative;
-    padding: 0px;
-    flex-direction: column;
-    align-items: center;
-    opacity: 1;
-  }
-
-  nav { display: none; }
-
-  /* BUG CORRIGIDO: font-size e margin-bottom precisam de unidade px */
-  .logo {
-    font-size: 20px;
-    margin-bottom: 10px;
-    letter-spacing: 0;
-    text-align: center;
-  }
-
-  .foto-esquerda, .foto-direita { display: none; }
-
-  .banner {
-    background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    border: none;
-    box-shadow: none;
-    z-index: 1;
-  }
-
-  .neon { font-size: 36px; margin: 10px 0; }
-  .logo-banner { font-size: 20px; margin: 10px 0; word-break: break-word; }
-  .logo-estudio { max-width: 140px; margin: 0 auto 15px auto; top: 0; }
-
-  .sobre { padding: 60px 10%; text-align: center; }
-  .sobre h2 { font-size: 28px; margin-bottom: 20px; }
-
-  .galeria {
-    padding: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .galeria h2 { font-size: 24px; margin-bottom: 100px; }
-
-  /* BUG CORRIGIDO: carousel-wrapper e view responsivos */
-  .carousel-wrapper {
-    width: 100%;
-  }
-
-  .carousel-view {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .carousel {
-    display: flex;
-    gap: 15px;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .carousel img {
-    width: 140px;
-    height: auto;
-    opacity: 0.5;
-    filter: brightness(0.7);
-    border-radius: 10px;
-  }
-
-  .carousel img.active {
-    transform: scale(1.2);
-    opacity: 1;
-    filter: brightness(1.2);
-    box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b;
-    border: none;
-    z-index: 10;
-  }
-
-  /* BUG CORRIGIDO: botões com posição correta no mobile */
-  .carousel-btn {
-    font-size: 24px;
-    padding: 6px 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .carousel-btn.prev { left: 2px; }
-  .carousel-btn.next { right: 2px; }
-
-  footer {
-    padding: 20px 0%;
-    text-align: center;
-  }
-
-  .logo-estudio {
-    position: absolute;
-    top: 410px;
-    right: 0%;
-    width: 125px;
-    max-width: 100%;
-  }
 }
 
 /* ======================= GALERIA DO ESTÚDIO ======================= */
@@ -489,32 +300,25 @@ footer {
   border-radius: 10px;
   transition: 0.4s;
   filter: brightness(0.9);
+  border: none;
+  box-shadow: none;
 }
 
-/* BUG CORRIGIDO: removido "zz" inválido após scale */
 .grid-estudio img:hover {
   transform: scale(1.07);
   filter: brightness(1.15);
-  box-shadow:
-    0 0 10px #c7a66b,
-    0 0 20px #c7a66b,
-    0 0 30px #c7a66b;
-}
-
-@media (max-width: 900px) {
-  .grid-estudio { gap: 20px; }
-  .grid-estudio img { width: 140px; }
+  box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b;
 }
 
 /* ======================= LOGO DO ESTÚDIO ======================= */
 .logo-estudio {
   display: block;
-  margin: 0 auto 40px auto;
-  max-width: 240px;
+  margin: -10px auto 20px auto;
+  max-width: 180px;
   height: auto;
   position: relative;
   filter:
-    drop-shadow(0 0 6px #c7a66b)
+    drop-shadow(0 0 6px  #c7a66b)
     drop-shadow(0 0 14px #c7a66b)
     drop-shadow(0 0 28px #c7a66b)
     drop-shadow(0 0 45px #c7a66b);
@@ -524,7 +328,7 @@ footer {
 @keyframes neonLogo {
   0% {
     filter:
-      drop-shadow(0 0 6px #c7a66b)
+      drop-shadow(0 0 6px  #c7a66b)
       drop-shadow(0 0 14px #c7a66b)
       drop-shadow(0 0 28px #c7a66b)
       drop-shadow(0 0 40px #c7a66b);
@@ -536,4 +340,104 @@ footer {
       drop-shadow(0 0 45px #c7a66b)
       drop-shadow(0 0 70px #c7a66b);
   }
+}
+
+/* ======================= ANIMAÇÃO ENTRADA SCROLL ======================= */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animar.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================= MOBILE ======================= */
+@media (max-width: 900px) {
+
+  html, body { width: 100%; overflow-x: hidden; }
+
+  body, main, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    position: relative;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav { display: none; }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .foto-esquerda, .foto-direita { display: none; }
+
+  .banner {
+    background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; max-width: 100%;
+    height: 100vh;
+    border: none; box-shadow: none;
+    z-index: 1;
+  }
+
+  .neon        { font-size: 36px; margin: 10px 0; }
+  .logo-banner { font-size: 20px; margin: 10px 0; word-break: break-word; }
+
+  .logo-estudio {
+    position: absolute;
+    top: 410px; right: 0;
+    width: 125px; max-width: 100%;
+    margin: 0;
+  }
+
+  .sobre    { padding: 60px 10%; }
+  .sobre h2 { font-size: 28px; margin-bottom: 20px; }
+
+  .galeria    { padding: 60px 0; }
+  .galeria h2 { font-size: 24px; margin-bottom: 50px; }
+
+  .carousel-wrapper { padding: 40px 0; }
+
+  .carousel     { gap: 20px; }
+  .carousel img { width: 160px; height: 220px; }
+
+  .carousel-wrapper {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  footer { padding: 20px 0; }
+
+  .grid-estudio     { gap: 20px; }
+  .grid-estudio img { width: 140px; }
 }
