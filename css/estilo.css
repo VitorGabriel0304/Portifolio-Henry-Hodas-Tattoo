@@ -1,69 +1,66 @@
 /* ======================= FONTE E RESET ======================= */
-/* Importa a fonte Cinzel e define estilos globais de reset */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
 
 * {
-  margin: 0; /* remove margens padrão */
-  padding: 0; /* remove padding padrão */
-  box-sizing: border-box; /* calcula padding e border dentro do width/height */
-  scroll-behavior: smooth; /* scroll suave */
-  font-family: 'Cinzel', serif; /* fonte principal */
-  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important; /* cursor customizado */
-  user-select: none; /* impede seleção de texto */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Cinzel', serif;
+  cursor: url("../img/tatuagens/favicon-32x32.png") 16 16, auto !important;
+  user-select: none;
 }
 
 /* ======================= BODY ======================= */
 body {
-  background: #0f0f0f; /* fundo preto escuro */
-  color: white; /* cor do texto branca */
-  overflow-x: hidden; /* impede scroll horizontal */
-  position: relative; /* para posicionamento de filhos absolutos */
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* ======================= PARTICULAS ======================= */
 #particulas {
-  position: fixed; /* fixa na tela */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png"); /* textura */
-  opacity: 0.2; /* transparência */
-  z-index: 0; /* sempre atrás do conteúdo */
-  pointer-events: none; /* não bloqueia clique */
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* ======================= HEADER ======================= */
 header {
-  position: fixed; /* sempre visível no topo */
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center; /* centraliza logo */
+  justify-content: center;
   align-items: center;
   padding: 5px 1px;
-  background: rgba(0,0,0,0); /* transparente */
-  backdrop-filter: blur(10px); /* efeito blur */
-  z-index: 1000; /* sobre outros elementos */
+  background: rgba(0,0,0,0);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-/* Logo principal */
 .logo {
   font-size: 32px;
   letter-spacing: 6px;
   color: white;
-  text-shadow: 0 0 10px #e29209; /* efeito glow */
+  text-shadow: 0 0 10px #e29209;
   text-align: center;
   white-space: nowrap;
   z-index: 1001;
 }
 
-/* Navegação */
 nav {
   position: absolute;
-  right: 40px; /* posiciona no canto direito */
+  right: 40px;
   display: flex;
-  gap: 25px; /* espaço entre links */
+  gap: 25px;
   z-index: 1000;
 }
 
@@ -74,22 +71,21 @@ nav a {
 }
 
 nav a:hover {
-  color: #c7a66b; /* cor hover */
+  color: #c7a66b;
 }
 
 /* ======================= BANNER ======================= */
 .banner {
-  height: 100vh; /* altura da tela */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  overflow: hidden; /* corta elementos extras */
+  overflow: hidden;
   z-index: 1;
 }
 
-/* Gradiente escuro sobre o banner */
 .banner::before {
   content: "";
   position: absolute;
@@ -99,7 +95,6 @@ nav a:hover {
   z-index: 2;
 }
 
-/* Fotos laterais */
 .foto-esquerda,
 .foto-direita {
   position: absolute;
@@ -108,13 +103,12 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   opacity: 0.9;
-  filter: brightness(0.7); /* escurece a imagem */
+  filter: brightness(0.7);
 }
 
 .foto-esquerda { left: 0; }
 .foto-direita { right: 0; }
 
-/* Conteúdo do banner */
 .conteudo-banner { z-index: 10; }
 
 .logo-banner {
@@ -132,7 +126,6 @@ nav a:hover {
   opacity: 0.85;
 }
 
-/* Texto neon */
 .neon {
   font-size: 64px;
   letter-spacing: 6px;
@@ -149,7 +142,6 @@ nav a:hover {
   margin-bottom: 30px;
 }
 
-/* Botões do banner */
 .botoes {
   display: flex;
   justify-content: center;
@@ -195,27 +187,12 @@ nav a:hover {
   text-align: center;
 }
 
-.galeria h2{
-
-  margin-bottom: 200px; 
-  /* aumenta espaço ENTRE o texto e as imagens (empurra as imagens para BAIXO) */
-
+.galeria h2 {
+  margin-bottom: 200px;
   margin-top: 40px;
-  /* sobe o texto "TRABALHOS" para CIMA */
-
   text-align: center;
-  /* centraliza o texto */
-
   font-size: 40px;
-  /* tamanho do texto */
 }
-
-
-
-
-
-
-
 
 .grid {
   display: grid;
@@ -245,9 +222,9 @@ nav a:hover {
 }
 
 @keyframes neonPulse {
-  0% { box-shadow:0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b; }
-  50% { box-shadow:0 0 20px #fff6d1,0 0 40px #fff6d1,0 0 60px #fff6d1,0 0 80px #fff6d1; }
-  100% { box-shadow:0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b; }
+  0%   { box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b; }
+  50%  { box-shadow: 0 0 20px #fff6d1, 0 0 40px #fff6d1, 0 0 60px #fff6d1, 0 0 80px #fff6d1; }
+  100% { box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b; }
 }
 
 /* ======================= WHATSAPP ======================= */
@@ -268,12 +245,28 @@ nav a:hover {
 }
 
 @keyframes whatsappPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70%  { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
   100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
 /* ======================= CARROSSEL ======================= */
+
+/* BUG CORRIGIDO: wrapper precisa de position relative para ancorar os botões */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BUG CORRIGIDO: overflow hidden aqui para cortar as imagens que saem do frame */
+.carousel-view {
+  overflow: hidden;
+  width: 100%;
+}
+
 .carousel-container {
   overflow: hidden;
   position: relative;
@@ -292,8 +285,7 @@ nav a:hover {
 }
 
 .carousel img {
-  width: 250PX;     /* ======================= TAMAMHO DA IMAGEM DA GALERIA======================= */
-
+  width: 250px;
   height: auto;
   border-radius: 10px;
   cursor: pointer;
@@ -309,15 +301,15 @@ nav a:hover {
   transform: scale(1.4);
   opacity: 1;
   filter: brightness(1.2);
-  box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b,0 0 40px #c7a66b;
+  box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b, 0 0 40px #c7a66b;
   border: none;
   z-index: 10;
 }
 
-/* Ajuste das setas do carrossel: sobre as imagens, sem distorção */
+/* BUG CORRIGIDO: botões posicionados dentro do wrapper com valores corretos */
 .carousel-btn {
   position: absolute;
-  top: 50%; /* centraliza verticalmente */
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.5);
   border: none;
@@ -338,23 +330,22 @@ nav a:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Aqui você pode subir/baixar as setas manualmente alterando top */
-.carousel-btn.prev { left: -120px; }
-.carousel-btn.next { right: -100px; }
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 
 /* ======================= FOOTER ======================= */
 footer {
   padding: 50px 10%;
-  text-align: center; /* centraliza conteúdo no PC */
+  text-align: center;
   background: #0a0a0a00;
   color: #fff;
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center; /* centraliza verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 /* ======================= MOBILE ======================= */
-@media(max-width:900px){
+@media (max-width: 900px) {
 
   html, body {
     width: 100%;
@@ -367,24 +358,30 @@ footer {
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 20 0px;
+    padding: 20px 0px; /* BUG CORRIGIDO: era "20 0px" sem unidade */
     box-sizing: border-box;
   }
 
   header {
     position: relative;
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
     flex-direction: column;
     align-items: center;
-    opacity:1.1;  }
+    opacity: 1;
+  }
 
   nav { display: none; }
 
-  .logo { font-size: 10; margin-bottom: 10; letter-spacing: 0; text-align: center; }
+  /* BUG CORRIGIDO: font-size e margin-bottom precisam de unidade px */
+  .logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0;
+    text-align: center;
+  }
 
   .foto-esquerda, .foto-direita { display: none; }
 
-  /* Banner mobile totalmente ajustado */
   .banner {
     background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
     flex-direction: column;
@@ -417,171 +414,126 @@ footer {
 
   .galeria h2 { font-size: 24px; margin-bottom: 100px; }
 
-  .carousel-container { width: 100%; justify-content: center; align-items: center; margin-top: 20px; overflow: hidden; }
-  .carousel { display: flex; gap: 15px; justify-content: center; align-items: center; width: 100%; max-width: 100%; }
-  .carousel img { width: 140px; height: auto; opacity: 0.5; filter: brightness(0.7); border-radius: 10px; }
-  .carousel img.active { transform: scale(1.2); opacity: 1; filter: brightness(1.2); box-shadow: 0 0 10px #c7a66b,0 0 20px #c7a66b,0 0 30px #c7a66b; border: none; z-index: 10; }
+  /* BUG CORRIGIDO: carousel-wrapper e view responsivos */
+  .carousel-wrapper {
+    width: 100%;
+  }
 
-  .carousel-btn { font-size: 28px; padding: 5px 10px; top: 25px; transform: translateY(-50%); }
-  .carousel-btn.prev { left: 700px; }
-  .carousel-btn.next { right: -500px; }
+  .carousel-view {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .carousel img {
+    width: 140px;
+    height: auto;
+    opacity: 0.5;
+    filter: brightness(0.7);
+    border-radius: 10px;
+  }
+
+  .carousel img.active {
+    transform: scale(1.2);
+    opacity: 1;
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px #c7a66b, 0 0 20px #c7a66b, 0 0 30px #c7a66b;
+    border: none;
+    z-index: 10;
+  }
+
+  /* BUG CORRIGIDO: botões com posição correta no mobile */
+  .carousel-btn {
+    font-size: 24px;
+    padding: 6px 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-btn.prev { left: 2px; }
+  .carousel-btn.next { right: 2px; }
 
   footer {
     padding: 20px 0%;
     text-align: center;
   }
-.logo-estudio{
 
-position:absolute;
-
-top:410px;  /* ajusta altura da logo */
-
-right: 0%;      /* encosta na borda direita da tela */
-
-width:125px;
-
-max-width:100%;   /* nunca passa da largura da tela */
-
+  .logo-estudio {
+    position: absolute;
+    top: 410px;
+    right: 0%;
+    width: 125px;
+    max-width: 100%;
+  }
 }
-
-
-}
-
-
 
 /* ======================= GALERIA DO ESTÚDIO ======================= */
-/* coloque este código NO FINAL do CSS */
-
-.grid-estudio{
-
-  display:flex; 
-  /* coloca as fotos em linha horizontal */
-
-  justify-content:center; 
-  /* centraliza as fotos */
-
-  align-items:center;
-
-  gap:40px; 
-  /* espaço entre as fotos */
-
-  margin-top:60px;
-
-  flex-wrap:wrap; 
-  /* no celular quebra linha automaticamente */
-
+.grid-estudio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
 }
 
-
-/* ======================= IMAGENS DO ESTÚDIO ======================= */
-
-.grid-estudio img{
-
-  width:220px;
-  /* 🔧 TAMANHO DAS FOTOS DO ESTÚDIO
-     você pode alterar aqui
-     180px = pequeno
-     220px = médio
-     260px = grande
-  */
-
-  height:auto;
-
-  border-radius:10px;
-
-  transition:0.4s;
-
-  filter:brightness(0.9);
-
+.grid-estudio img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  transition: 0.4s;
+  filter: brightness(0.9);
 }
 
-
-/* ======================= HOVER DAS FOTOS ======================= */
-
-.grid-estudio img:hover{
-
-  transform:scale(1.07);zz
-
-  filter:brightness(1.15);
-
+/* BUG CORRIGIDO: removido "zz" inválido após scale */
+.grid-estudio img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.15);
   box-shadow:
-  0 0 10px #c7a66b,
-  0 0 20px #c7a66b,
-  0 0 30px #c7a66b;
-
+    0 0 10px #c7a66b,
+    0 0 20px #c7a66b,
+    0 0 30px #c7a66b;
 }
 
-
-/* ======================= MOBILE ======================= */
-
-@media(max-width:900px){
-
-.grid-estudio{
-
-  gap:20px;
-
+@media (max-width: 900px) {
+  .grid-estudio { gap: 20px; }
+  .grid-estudio img { width: 140px; }
 }
-
-.grid-estudio img{
-
-  width:140px;
-  /* tamanho menor no celular */
-
-}
-
-}
-
-
-
 
 /* ======================= LOGO DO ESTÚDIO ======================= */
-
-.logo-estudio{
-
-display:block;              /* permite centralizar com margin */
-margin:0 auto 40px auto;    /* centraliza horizontalmente */
-
-max-width:240px;            /* tamanho da logo */
-height:auto;
-
-position:relative;
-
-/* brilho neon dourado */
-filter:
-drop-shadow(0 0 6px #c7a66b)
-drop-shadow(0 0 14px #c7a66b)
-drop-shadow(0 0 28px #c7a66b)
-drop-shadow(0 0 45px #c7a66b);
-
-/* animação de neon */
-animation:neonLogo 2.5s infinite alternate;
-
+.logo-estudio {
+  display: block;
+  margin: 0 auto 40px auto;
+  max-width: 240px;
+  height: auto;
+  position: relative;
+  filter:
+    drop-shadow(0 0 6px #c7a66b)
+    drop-shadow(0 0 14px #c7a66b)
+    drop-shadow(0 0 28px #c7a66b)
+    drop-shadow(0 0 45px #c7a66b);
+  animation: neonLogo 2.5s infinite alternate;
 }
 
-
-
-/* ======================= ANIMAÇÃO DO NEON ======================= */
-
-@keyframes neonLogo{
-
-0%{
-
-filter:
-drop-shadow(0 0 6px #c7a66b)
-drop-shadow(0 0 14px #c7a66b)
-drop-shadow(0 0 28px #c7a66b)
-drop-shadow(0 0 40px #c7a66b);
-
-}
-
-100%{
-
-filter:
-drop-shadow(0 0 10px #fff3c0)
-drop-shadow(0 0 22px #c7a66b)
-drop-shadow(0 0 45px #c7a66b)
-drop-shadow(0 0 70px #c7a66b);
-
-}
-
+@keyframes neonLogo {
+  0% {
+    filter:
+      drop-shadow(0 0 6px #c7a66b)
+      drop-shadow(0 0 14px #c7a66b)
+      drop-shadow(0 0 28px #c7a66b)
+      drop-shadow(0 0 40px #c7a66b);
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 10px #fff3c0)
+      drop-shadow(0 0 22px #c7a66b)
+      drop-shadow(0 0 45px #c7a66b)
+      drop-shadow(0 0 70px #c7a66b);
+  }
 }

@@ -21,7 +21,6 @@ window.addEventListener("scroll", animarScroll);
 animarScroll();
 
 // ================= LIGHTBOX GALERIA =================
-// Só aplica em todas as imagens da galeria e do estúdio
 const lightboxImgs = document.querySelectorAll(".grid-estudio img, .grid img");
 const lightbox = document.createElement("div");
 lightbox.style.position = "fixed";
@@ -65,7 +64,7 @@ const images = document.querySelectorAll('.carousel img');
 const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
-let currentIndex = 1; // Começa mostrando a segunda imagem como centro
+let currentIndex = 1;
 
 function updateCarousel() {
   images.forEach(img => img.classList.remove('active'));
@@ -89,7 +88,6 @@ nextBtn.addEventListener('click', () => {
   updateCarousel();
 });
 
-// Clicar em qualquer imagem para centralizar
 images.forEach((img, i) => {
   img.addEventListener('click', () => {
     currentIndex = i;
