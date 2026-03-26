@@ -357,87 +357,137 @@ footer {
 /* ======================= MOBILE ======================= */
 @media (max-width: 900px) {
 
-  html, body { width: 100%; overflow-x: hidden; }
+html, body {
+width: 100%;
+overflow-x: hidden;
+}
 
-  body, main, section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0;
-    box-sizing: border-box;
-  }
+body, main, section {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+width: 100%;
+padding: 20px 0;
+box-sizing: border-box;
+}
 
-  header {
-    position: relative;
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ================= HEADER ================= */
+header {
+position: relative;
+padding: 10px 0;
+flex-direction: column;
+align-items: center;
+}
 
-  nav { display: none; }
+nav {
+display: none;
+}
 
-  .logo {
-    font-size: 20px;
-    margin-bottom: 10px;
-    letter-spacing: 0;
-    text-align: center;
-  }
+/* LOGO DO TOPO (corrigida) */
+.logo {
+  white-space: normal;
+  font-size: clamp(20px, 5vw, 26px);
+  line-height: 1.2;
+  text-align: center;
+  max-width: 260px;
+  letter-spacing: 2px;
+}
+/* REMOVE LOGO DO BANNER NO MOBILE */
+.logo-estudio {
+display: none !important;
+}
 
-  .foto-esquerda, .foto-direita { display: none; }
+.foto-esquerda,
+.foto-direita {
+display: none;
+}
 
-  .banner {
-    background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; max-width: 100%;
-    height: 100vh;
-    border: none; box-shadow: none;
-    z-index: 1;
-  }
+/* ================= BANNER ================= */
+.banner {
+background: url("../img/tatuagens/henry tatuando.PNG") center/cover no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-top: 40px;
+width: 100%;
+height: 100vh;
+border: none;
+box-shadow: none;
+z-index: 1;
+}
 
-  .neon        { font-size: 36px; margin: 10px 0; }
-  .logo-banner { font-size: 20px; margin: 10px 0; word-break: break-word; }
+.neon {
+font-size: 36px;
+margin: 10px 0;
+}
 
-  .logo-estudio {
-    position: absolute;
-    top: 410px; right: 0;
-    width: 125px; max-width: 100%;
-    margin: 0;
-  }
+.logo-banner {
+font-size: 20px;
+margin: 10px 0;
+word-break: break-word;
+}
 
-  .sobre    { padding: 60px 10%; }
-  .sobre h2 { font-size: 28px; margin-bottom: 20px; }
+/* ================= SOBRE ================= */
+.sobre {
+padding: 60px 10%;
+}
 
-  .galeria    { padding: 60px 0; }
-  .galeria h2 { font-size: 24px; margin-bottom: 50px; }
+.sobre h2 {
+font-size: 28px;
+margin-bottom: 20px;
+}
 
-  .carousel-wrapper { padding: 40px 0; }
+/* ================= GALERIA ================= */
+.galeria {
+padding: 60px 0;
+}
 
-  .carousel     { gap: 20px; }
-  .carousel img { width: 160px; height: 220px; }
+.galeria h2 {
+font-size: 24px;
+margin-bottom: 50px;
+}
 
-  .carousel-wrapper {
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 8%,
-      black 92%,
-      transparent 100%
-    );
-  }
+/* ================= CARROSSEL ================= */
+.carousel-wrapper {
+padding: 40px 0;
+-webkit-mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+mask-image: linear-gradient(
+to right,
+transparent 0%,
+black 8%,
+black 92%,
+transparent 100%
+);
+}
 
-  footer { padding: 20px 0; }
+.carousel {
+gap: 20px;
+}
 
-  .grid-estudio     { gap: 20px; }
-  .grid-estudio img { width: 140px; }
+.carousel img {
+width: 160px;
+height: 220px;
+}
+
+/* ================= GRID ESTÚDIO ================= */
+.grid-estudio {
+gap: 20px;
+}
+
+.grid-estudio img {
+width: 140px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+padding: 20px 0;
+}
 }
