@@ -39,9 +39,21 @@ header {
   justify-content: center;
   align-items: center;
   padding: 5px 1px;
-  background: rgba(0,0,0,0);
-  backdrop-filter: blur(10px);
+  margin: 0;
+
+  /* BUG CORRIGIDO: header totalmente transparente — sem faixa preta */
+  background: transparent;
+
+  /* BUG CORRIGIDO: backdrop removido para não criar superfície escura */
+  /* backdrop-filter: blur(10px); */
+
+  /* BUG CORRIGIDO: removida qualquer borda ou linha residual */
+  border: none;
+  outline: none;
+  box-shadow: none;
+
   z-index: 1000;
+  transition: background 0.4s ease;
 }
 
 .logo {
@@ -70,9 +82,17 @@ nav a {
 
 nav a:hover { color: #c7a66b; }
 
+/* ======================= CONTEÚDO PRINCIPAL ======================= */
+.conteudo-principal {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 /* ======================= BANNER ======================= */
 .banner {
   height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,8 +112,9 @@ nav a:hover { color: #c7a66b; }
 
 .foto-esquerda, .foto-direita {
   position: absolute;
-  top: 0;
-  width: 35%; height: 100%;
+  top: -10px;
+  width: 35%;
+  height: calc(100% + 10px);
   object-fit: cover;
   opacity: 0.9;
   filter: brightness(0.7);
@@ -173,17 +194,11 @@ nav a:hover { color: #c7a66b; }
 }
 
 /* ======================= CARROSSEL ======================= */
-
-/*
-  overflow: hidden no wrapper corta o que sai.
-  padding vertical grande = espaço para a imagem central crescer sem ser cortada.
-  mask-image = fade suave nas laterais.
-*/
 .carousel-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 60px 0;          /* espaço para o scale da imagem ativa não ser cortado */
+  padding: 60px 0;
 
   -webkit-mask-image: linear-gradient(
     to right,
@@ -203,7 +218,7 @@ nav a:hover { color: #c7a66b; }
 
 .carousel-view {
   width: 100%;
-  overflow: visible;        /* deixa o scale da .active aparecer */
+  overflow: visible;
 }
 
 .carousel {
@@ -211,7 +226,6 @@ nav a:hover { color: #c7a66b; }
   gap: 40px;
   align-items: center;
   width: max-content;
-  /* sem animação CSS — o JS controla a posição via translateX */
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -225,13 +239,12 @@ nav a:hover { color: #c7a66b; }
   flex-shrink: 0;
   cursor: pointer;
 
-  /* SEM border, SEM outline, SEM box-shadow padrão — elimina a "linha" */
   border: none;
   outline: none;
   box-shadow: none;
 
-  filter: brightness(0.55) saturate(0.7);
-  transform: scale(0.88);
+  filter: brightness(0.35) saturate(0.5);
+  transform: scale(0.78);
   transition:
     transform  0.5s ease,
     filter     0.5s ease,
@@ -240,12 +253,13 @@ nav a:hover { color: #c7a66b; }
 
 /* ======================= IMAGEM CENTRAL ATIVA ======================= */
 .carousel img.active {
-  transform: scale(1.18);
-  filter: brightness(1.1) saturate(1.05);
+  transform: scale(1.22);
+  filter: brightness(1.25) saturate(1.15) contrast(1.05);
   box-shadow:
-    0 0 14px #c7a66b,
-    0 0 30px #c7a66b,
-    0 0 55px #c7a66b;
+    0 0 20px #c7a66b,
+    0 0 45px #c7a66b,
+    0 0 80px #c7a66b,
+    0 0 120px rgba(199,166,107,0.4);
   z-index: 10;
   position: relative;
 }
@@ -360,24 +374,42 @@ footer {
 html, body {
 width: 100%;
 overflow-x: hidden;
+margin: 0;
+padding: 0;
 }
 
-body, main, section {
+body, main {
 display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
 width: 100%;
-padding: 20px 0;
 box-sizing: border-box;
+}
+
+section {
+width: 100%;
+box-sizing: border-box;
+text-align: center;
+}
+
+main {
+margin-top: 0 !important;
+padding-top: 0 !important;
 }
 
 /* ================= HEADER ================= */
 header {
-position: relative;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
 padding: 10px 0;
 flex-direction: column;
 align-items: center;
+background: transparent;
+border: none;
+box-shadow: none;
 }
 
 nav {
@@ -413,6 +445,8 @@ align-items: center;
 padding-top: 40px;
 width: 100%;
 height: 100vh;
+margin-top: -60px;
+padding-top: 60px;
 border: none;
 box-shadow: none;
 z-index: 1;
@@ -452,6 +486,9 @@ margin-bottom: 50px;
 /* ================= CARROSSEL ================= */
 .carousel-wrapper {
 padding: 40px 0;
+width: 100%;
+overflow: hidden;
+display: block;
 -webkit-mask-image: linear-gradient(
 to right,
 transparent 0%,
@@ -468,13 +505,36 @@ transparent 100%
 );
 }
 
+.carousel-view {
+width: 100%;
+overflow: visible;
+display: block;
+}
+
 .carousel {
+display: flex;
+flex-direction: row;
 gap: 20px;
+width: max-content;
+align-items: center;
 }
 
 .carousel img {
-width: 160px;
-height: 220px;
+width: 150px;
+height: 210px;
+flex-shrink: 0;
+display: block;
+filter: brightness(0.35) saturate(0.5);
+transform: scale(0.78);
+}
+
+.carousel img.active {
+transform: scale(1.18);
+filter: brightness(1.25) saturate(1.15) contrast(1.05);
+box-shadow:
+  0 0 16px #c7a66b,
+  0 0 35px #c7a66b,
+  0 0 60px rgba(199,166,107,0.5);
 }
 
 /* ================= GRID ESTÚDIO ================= */
